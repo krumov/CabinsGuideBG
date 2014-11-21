@@ -22,8 +22,8 @@ namespace MountainGuideBG.DataModel
                     UniqueId = parseObj.ObjectId,
                     Name = parseObj.Name,
                     Description = parseObj.Description,
-                    cabins = (ObservableCollection<CabinModel>) parseObj.cabins.AsQueryable().Select(CabinModel.FromParseObject),
-                    Image = new BitmapImage(parseObj.Get<ParseFile>(parseObj["name"].ToString().ToLower()).Url)
+                    cabins = new ObservableCollection<CabinModel>(),
+                    Image = new BitmapImage(parseObj.Get<ParseFile>(parseObj.Name.ToLower()).Url)
                 };
             }
         }
@@ -33,14 +33,6 @@ namespace MountainGuideBG.DataModel
             this.cabins = new ObservableCollection<CabinModel>();
         }
 
-        public MountainModel(String uniqueId, String title, BitmapImage image, String description)
-        {
-            this.UniqueId = uniqueId;
-            this.Name = title;
-            this.Description = description;
-            this.Image = image;
-            this.cabins = new ObservableCollection<CabinModel>();
-        }
 
         public string UniqueId { get; set; }
         public string Name { get; set; }

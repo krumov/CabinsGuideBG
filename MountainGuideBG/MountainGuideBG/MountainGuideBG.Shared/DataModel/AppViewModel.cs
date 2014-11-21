@@ -35,7 +35,26 @@ namespace MountainGuideBG.Data
         private ObservableCollection<MountainModel> mountains = new ObservableCollection<MountainModel>();
         public ObservableCollection<MountainModel> Mountains
         {
-            get { return this.mountains; }
+            get
+            {
+                if (this.mountains == null)
+                {
+                    this.Mountains = new ObservableCollection<MountainModel>();
+                }
+                return this.mountains;
+            }
+            set
+            {
+                if (this.mountains == null)
+                {
+                    this.mountains = new ObservableCollection<MountainModel>();
+                }
+                this.mountains.Clear();
+                foreach (var item in value)
+                {
+                    this.mountains.Add(item);
+                }
+            }
         }
 
         public static async Task<IEnumerable<MountainModel>> GetMountainsAsync()
@@ -68,19 +87,54 @@ namespace MountainGuideBG.Data
             if (this.mountains.Count != 0)
                 return;
 
-            var mountainsFromParse =  await new ParseQuery<Mountain>().Include("cabins")
+            var mountainsFromParse = await new ParseQuery<Mountain>()
                 .FindAsync(
                 CancellationToken.None);
 
+            var cabinsFromParse = await new ParseQuery<Cabin>()
+                .FindAsync(
+                CancellationToken.None);
+
+            var cabins = new List<CabinModel>();
+
+            foreach (var cabin in cabinsFromParse)
+            {
+                var newCabin = new CabinModel(){};
+
+                newCabin.UniqueId = cabin.ObjectId;
+                newCabin.Name = cabin.Name;
+                newCabin.Mountain = cabin.Mountain;
+                newCabin.Description = cabin.Description;
+                newCabin.Image = new BitmapImage(cabin.Get<ParseFile>("image").Url);
+                
+
+                cabins.Add(newCabin);
+            }
+
+            //var cabins = cabinsFromParse.AsQueryable().Select(CabinModel.FromParseObject);
+
             //foreach (var mountain in mountainsFromParse)
             //{
-            //    var cabins = mountain.Get<object>("cabins");
+            //    var cabins = mountain.Get<ObservableCollection<Cabin>>("cabins");
             //    var c = 6;
             //}
 
-           // this.mountains = (ObservableCollection<MountainModel>)mountainsFromParse.AsQueryable().Select(MountainModel.FromParseObject);
+            foreach (var mountain in mountainsFromParse)
+            {
+                var newMountain = new MountainModel() { };
 
-            var b = 5;
+                newMountain.UniqueId = mountain.ObjectId;
+                newMountain.Name = mountain.Name;
+                newMountain.Description = mountain.Description;
+                newMountain.Image = new BitmapImage(mountain.Get<ParseFile>("image").Url);
+
+
+                this.Mountains.Add(newMountain);
+            }
+
+        //    this.Mountains = (ObservableCollection<MountainModel>)mountainsFromParse.AsQueryable().Select(MountainModel.FromParseObject);
+
+           var b = 5;
         }
     }
 }

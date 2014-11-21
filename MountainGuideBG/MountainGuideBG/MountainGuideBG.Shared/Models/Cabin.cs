@@ -6,7 +6,7 @@ using System.Text;
 namespace MountainGuideBG.Models
 {
     [ParseClassName("Cabins")]
-    class Cabin: ParseObject
+    public class Cabin: ParseObject
     {
         public Cabin()
         {

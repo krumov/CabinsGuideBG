@@ -7,7 +7,7 @@ using System.Text;
 namespace MountainGuideBG.Models
 {
     [ParseClassName("Mountains")]
-    class Mountain : ParseObject
+    public class Mountain : ParseObject
     {
         public Mountain()
         {
@@ -36,10 +36,10 @@ namespace MountainGuideBG.Models
         }
 
         [ParseFieldName("cabins")]
-        public ObservableCollection<Cabin> cabins
+        public List<string> cabins
         {
-            get { return GetProperty<ObservableCollection<Cabin>>(); }
-            set { SetProperty<ObservableCollection<Cabin>>(value); }
+            get { return GetProperty<List<string>>(); }
+            set { SetProperty<List<string>>(value); }
         }
 
     }
