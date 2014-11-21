@@ -71,7 +71,7 @@ namespace MountainGuideBG
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
             // TODO: Create an appropriate data model for your problem domain to replace the sample data.
-            var group = await SampleDataSource.GetGroupAsync((string)e.NavigationParameter);
+            var group = await AppViewModel.GetMountainAsync((string)e.NavigationParameter);
             this.DefaultViewModel["Group"] = group;
         }
 
@@ -95,7 +95,7 @@ namespace MountainGuideBG
         /// <param name="e">Event data that describes the item clicked.</param>
         private void ItemView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var itemId = ((SampleDataItem)e.ClickedItem).UniqueId;
+            var itemId = ((CabinModel)e.ClickedItem).UniqueId;
             if (!Frame.Navigate(typeof(ItemPage), itemId))
             {
                 var resourceLoader = ResourceLoader.GetForCurrentView("Resources");
