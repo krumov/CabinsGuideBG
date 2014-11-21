@@ -1,6 +1,7 @@
 ﻿using Parse;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq.Expressions;
 using System.Text;
 using Windows.UI.Xaml.Media.Imaging;
@@ -19,7 +20,7 @@ namespace MountainGuideBG.DataModel
                     Name = parseObj["name"].ToString(),
                     Mountain = parseObj["mountain"].ToString(),
                     Description = parseObj["description"].ToString(),
-                    Image = parseObj
+                    Image = new BitmapImage(parseObj.Get<ParseFile>("image").Url)
                 };
             }
         }

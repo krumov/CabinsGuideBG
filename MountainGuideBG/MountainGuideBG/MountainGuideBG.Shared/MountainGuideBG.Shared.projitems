@@ -18,6 +18,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)DataModel\CabinModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataModel\MountainModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataModel\SampleDataSource.cs" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\akademik.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\aleko.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\banderitza.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\belite_brezi_vitosha.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\belmeken.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\bezbog.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\bezovo.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\bodrost.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)DataModel\SampleData.json" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\LightGray.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\MediumGray.png" />
