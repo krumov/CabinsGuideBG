@@ -53,6 +53,30 @@
     <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\DarkGray.png">
       <PackagePath>Assets\DarkGray.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\akademik.jpg">
+      <PackagePath>Assets\akademik.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\aleko.jpg">
+      <PackagePath>Assets\aleko.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\banderitza.jpg">
+      <PackagePath>Assets\banderitza.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\belite_brezi_vitosha.jpg">
+      <PackagePath>Assets\belite_brezi_vitosha.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\belmeken.jpg">
+      <PackagePath>Assets\belmeken.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\bezbog.jpg">
+      <PackagePath>Assets\bezbog.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\bezovo.jpg">
+      <PackagePath>Assets\bezovo.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\bodrost.jpg">
+      <PackagePath>Assets\bodrost.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\DataModel\SampleData.json">
       <PackagePath>DataModel\SampleData.json</PackagePath>
     </AppxPackagedFile>

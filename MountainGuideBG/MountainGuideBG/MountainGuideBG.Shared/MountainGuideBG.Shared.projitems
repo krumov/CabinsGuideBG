@@ -17,7 +17,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)DataModel\CabinModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataModel\MountainModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DataModel\SampleDataSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataModel\AppViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Cabin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Mountain.cs" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\akademik.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\aleko.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\banderitza.jpg" />

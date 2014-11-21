@@ -19,6 +19,7 @@ using MountainGuideBG.Common;
 using Parse;
 using MountainGuideBG.Models;
 using Windows.UI.Xaml.Media.Imaging;
+using System.Xml.Linq;
 
 // The Universal Hub Application project template is documented at http://go.microsoft.com/fwlink/?LinkID=391955
 
@@ -124,14 +125,19 @@ namespace MountainGuideBG
             // Ensure the current window is active
             Window.Current.Activate();
 
-            BitmapImage image = new BitmapImage(new Uri("Assets/aleko.jpg"));
-
             Cabin cabin = new Cabin();
             cabin.Name = "Aleko";
             cabin.Mountain = "Vitosha";
             cabin.Description = "Това е първата хижа на Витоша - построена е през 1924 г. от туристическо дружество “Алеко Константинов”- клон на БТС.";
-            cabin.Image = 
+            cabin.Coordinates = new ParseGeoPoint(42.3457, 23.1731);
 
+            Mountain mountain = new Mountain();
+            mountain.Name = "Vitosha";
+            mountain.Description = "Витоша е планина в Западна България. Най-високата ѝ точка е Черни връх (2290 m[1]). Така тя се нарежда на четвърто място по височина в България след Рила, Пирин и Стара планина.";
+            mountain.cabins.Add(cabin);
+
+            await cabin.SaveAsync();
+            await mountain.SaveAsync();
         }
 
 #if WINDOWS_PHONE_APP

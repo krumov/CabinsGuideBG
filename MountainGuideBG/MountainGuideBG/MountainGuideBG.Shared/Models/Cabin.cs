@@ -40,5 +40,12 @@ namespace MountainGuideBG.Models
             get { return GetProperty<ParseFile>(); }
             set { SetProperty<ParseFile>(value); }
         }
+
+        [ParseFieldName("coordinates")]
+        public ParseGeoPoint Coordinates
+        {
+            get { return GetProperty<ParseGeoPoint>(); }
+            set { SetProperty<ParseGeoPoint>(value); }
+        }
     }
 }
