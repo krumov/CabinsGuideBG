@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MountainGuideBG.DataModel;
+using Parse;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -18,58 +20,6 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace MountainGuideBG.Data
 {
-    /// <summary>
-    /// Generic item data model.
-    /// </summary>
-    public class CabinModel
-    {
-        public CabinModel(String uniqueId, String title, String subtitle, BitmapImage imagePath, String description)
-        {
-            this.UniqueId = uniqueId;
-            this.Name = title;
-            this.Mountain = subtitle;
-            this.Description = description;
-            this.Image = imagePath;
-        }
-
-        public string UniqueId { get; private set; }
-        public string Name { get; private set; }
-        public string Mountain { get; private set; }
-        public string Description { get; private set; }
-        public BitmapImage Image { get; private set; }
-
-        public override string ToString()
-        {
-            return this.Name;
-        }
-    }
-
-    /// <summary>
-    /// Generic group data model.
-    /// </summary>
-    public class MountainModel
-    {
-        public MountainModel(String uniqueId, String title, String imagePath, String description)
-        {
-            this.UniqueId = uniqueId;
-            this.Name = title;
-            this.Description = description;
-            this.ImagePath = imagePath;
-            this.cabins = new ObservableCollection<CabinModel>();
-        }
-
-        public string UniqueId { get; private set; }
-        public string Name { get; private set; }
-        public string Description { get; private set; }
-        public string ImagePath { get; private set; }
-        public ObservableCollection<CabinModel> cabins { get; private set; }
-
-        public override string ToString()
-        {
-            return this.Name;
-        }
-    }
-
     /// <summary>
     /// Creates a collection of groups and items with content read from a static json file.
     /// 
@@ -116,7 +66,9 @@ namespace MountainGuideBG.Data
             if (this.mountains.Count != 0)
                 return;
 
-           
+            var testObject = await ParseObject.GetQuery("TestObject").FindAsync();
+
+            var b = 5;
         }
     }
 }
