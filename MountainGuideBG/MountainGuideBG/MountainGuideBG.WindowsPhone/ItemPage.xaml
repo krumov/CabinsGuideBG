@@ -19,8 +19,8 @@
             </NavigationThemeTransition>
         </TransitionCollection>
     </Page.Transitions>
-
-    <Grid x:Name="LayoutRoot">
+    <ScrollViewer>
+        <Grid x:Name="LayoutRoot">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
                 <EntranceThemeTransition/>
@@ -28,20 +28,28 @@
         </Grid.ChildrenTransitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
         <!-- Title Panel -->
         <StackPanel Grid.Row="0" Margin="19,0,0,0">
-            <TextBlock x:Uid="Header" Text="application name" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0" />
-            <TextBlock Text="{Binding Title}" Style="{ThemeResource HeaderTextBlockStyle}" Margin="0,-6.5,0,26.5" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+            <TextBlock x:Uid="Header" Text="Cabin" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0" />
+            <TextBlock Text="{Binding Name}" Style="{ThemeResource HeaderTextBlockStyle}" Margin="0,-6.5,0,26.5" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+
         </StackPanel>
 
         <!--TODO: Content should be placed within the following grid 
                   to show details for the current item -->
         <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+             <Image Source="{Binding Image}" Grid.Row="0" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" />
+            <TextBlock Grid.Row="1" Text="{Binding Description}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" FontSize="28"/>
 
         </Grid>
     </Grid>
+    </ScrollViewer>
 </Page>

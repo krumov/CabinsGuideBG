@@ -19,10 +19,10 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}" Height="150">
-                    <Image Source="{Binding ImagePath}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
+                    <Image Source="{Binding Image}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
                 </Border>
                 <StackPanel Grid.Row="1" Margin="0,10,0,0">
-                    <TextBlock Text="{Binding Title}" Style="{StaticResource TitleTextBlockStyle}" TextWrapping="NoWrap"/>
+                    <TextBlock Text="{Binding Name}" Style="{StaticResource TitleTextBlockStyle}" TextWrapping="NoWrap"/>
                     <TextBlock Text="{Binding Description}" Style="{StaticResource BodyTextBlockStyle}" MaxHeight="60" />
                 </StackPanel>
             </Grid>
@@ -62,7 +62,7 @@
                     <ImageBrush ImageSource="Assets/MediumGray.png" Stretch="UniformToFill" />
                 </HubSection.Background>
             </HubSection>
-            <HubSection Width="500" x:Uid="Section1Header" Header="Section 1">
+            <HubSection Width="500" x:Uid="Section1Header" Header="Mountains">
                 <DataTemplate>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -101,12 +101,12 @@
                     </Grid>
                 </DataTemplate>
             </HubSection>
-            <HubSection IsHeaderInteractive="True" DataContext="{Binding Section3Items}" d:DataContext="{Binding Groups[3], Source={d:DesignData Source=../MountainGuideBG.Shared/DataModel/SampleData.json, Type=data:SampleDataSource}}"
+            <HubSection IsHeaderInteractive="True" DataContext="{Binding Section3Items}" d:DataContext="{Binding Groups[1], Source={d:DesignData Source=../MountainGuideBG.Shared/DataModel/SampleData.json, Type=data:SampleDataSource}}"
                         x:Uid="Section3Header" Header="Section 3" Padding="40,40,40,32">
                 <DataTemplate>
                     <GridView
                         x:Name="itemGridView"
-                        ItemsSource="{Binding Items}"
+                        ItemsSource="{Binding cabins}"
                         Margin="-9,-14,0,0"
                         AutomationProperties.AutomationId="ItemGridView"
                         AutomationProperties.Name="Items In Group"

@@ -35,12 +35,6 @@ namespace MountainGuideBG.Models
             set { SetProperty<ParseFile>(value); }
         }
 
-        [ParseFieldName("cabins")]
-        public List<string> cabins
-        {
-            get { return GetProperty<List<string>>(); }
-            set { SetProperty<List<string>>(value); }
-        }
 
     }
 }

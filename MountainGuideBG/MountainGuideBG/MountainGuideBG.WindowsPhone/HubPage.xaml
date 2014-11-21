@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
-    d:DataContext="{Binding Source={d:DesignData Source=../MountainGuideBG.Shared/DataModel/SampleData.json, Type=data:SampleDataSource}}"
+    d:DataContext="{Binding Source={d:DesignData Source={Binding }, Type=data:SampleDataSource}}"
     xmlns:data="using:MountainGuideBG.Data"
     mc:Ignorable="d">
 
@@ -28,8 +28,8 @@
             <!-- Grid-appropriate item template as seen in section 2 -->
             <DataTemplate x:Key="Standard200x180TileItemTemplate">
                 <Grid Margin="0,0,9.5,9.5" Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}">
-                    <Image Source="{Binding ImagePath}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}" Height="138.5" Width="138.5"/>
-                    <TextBlock Text="{Binding Title}" VerticalAlignment="Bottom" Margin="9.5,0,0,6.5" Style="{ThemeResource BaseTextBlockStyle}"/>
+                    <Image Source="{Binding Image}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Name}" Height="138.5" Width="138.5"/>
+                    <TextBlock Text="{Binding Name}" VerticalAlignment="Bottom" Margin="9.5,0,0,6.5" Style="{ThemeResource BaseTextBlockStyle}"/>
                 </Grid>
             </DataTemplate>
 
@@ -41,12 +41,11 @@
                     </Grid.ColumnDefinitions>
 
                     <Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}" Margin="0,9.5,0,0" Grid.Column="0" HorizontalAlignment="Left">
-                        <Image Source="{Binding ImagePath}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}" Height="79" Width="79"/>
+                        <Image Source="{Binding Image}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Name}" Height="79" Width="79"/>
                     </Border>
                     <StackPanel Grid.Column="1" Margin="14.5,0,0,0">
-                        <TextBlock Text="{Binding Title}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
+                        <TextBlock Text="{Binding Name}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
                         <TextBlock Text="{Binding Description}" Style="{ThemeResource ListViewItemContentTextBlockStyle}" Foreground="{ThemeResource PhoneMidBrush}" />
-                        <TextBlock Text="{Binding Subtitle}" Style="{ThemeResource ListViewItemSubheaderTextBlockStyle}" />
                     </StackPanel>
                 </Grid>
             </DataTemplate>
@@ -59,11 +58,10 @@
                     </Grid.ColumnDefinitions>
 
                     <Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}" Margin="0,9.5,0,0" Grid.Column="0" HorizontalAlignment="Left">
-                        <Image Source="{Binding ImagePath}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}" Height="79" Width="79"/>
+                        <Image Source="{Binding Image}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Name}" Height="79" Width="79"/>
                     </Border>
                     <StackPanel Grid.Column="1" Margin="14.5,0,0,0">
-                        <TextBlock Text="{Binding Title}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
-                        <TextBlock Text="{Binding Subtitle}" Style="{ThemeResource ListViewItemSubheaderTextBlockStyle}"/>
+                        <TextBlock Text="{Binding Name}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
                     </StackPanel>
                 </Grid>
             </DataTemplate>
@@ -71,8 +69,9 @@
     </Page.Resources>
 
     <Grid x:Name="LayoutRoot">
-        <Hub x:Name="Hub" x:Uid="Hub" Header="application name" Background="{ThemeResource HubBackgroundImageBrush}">
-            <HubSection x:Uid="HubSection1" Header="SECTION 1" DataContext="{Binding Groups}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
+        <Hub x:Name="Hub" x:Uid="Hub" Header="Mountain Guide" Background="{ThemeResource HubBackgroundImageBrush}">
+
+            <HubSection x:Uid="HubSection1" Header="Mountains" DataContext="{Binding Groups}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                 <DataTemplate>
                     <ListView
                         ItemsSource="{Binding}"
@@ -82,7 +81,7 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Margin="0,0,0,27.5">
-                                    <TextBlock Text="{Binding Title}" Style="{ThemeResource ListViewItemTextBlockStyle}" />
+                                    <TextBlock Text="{Binding Name}" Name="testText" Style="{ThemeResource ListViewItemTextBlockStyle}" />
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -90,12 +89,12 @@
                 </DataTemplate>
             </HubSection>
 
-            <HubSection x:Uid="HubSection2" Header="SECTION 2" Width="Auto"
+            <!--<HubSection x:Uid="HubSection2" Header="SECTION 2" Width="Auto"
                          DataContext="{Binding Groups[0]}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                 <DataTemplate>
                     <GridView
                         Margin="0,9.5,0,0"
-                        ItemsSource="{Binding Items}"
+                        ItemsSource="{Binding cabins}"
                         AutomationProperties.AutomationId="ItemGridView"
                         AutomationProperties.Name="Items In Group"
                         ItemTemplate="{StaticResource Standard200x180TileItemTemplate}"
@@ -110,17 +109,17 @@
                         </GridView.ItemsPanel>
                     </GridView>
                 </DataTemplate>
-            </HubSection>
+            </HubSection>-->
 
-            <HubSection x:Uid="HubSection3" Header="SECTION 3"
+            <HubSection x:Uid="HubSection2" Header="Cabins"
                         DataContext="{Binding Groups[1]}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                 <DataTemplate>
                     <ListView 
-                        AutomationProperties.AutomationId="ItemListViewSection3"
+                        AutomationProperties.AutomationId="ItemGridView"
                         AutomationProperties.Name="Items In Group"
                         SelectionMode="None"
                         IsItemClickEnabled="True"
-                        ItemsSource="{Binding Items}"
+                        ItemsSource="{Binding cabins}"
                         ItemTemplate="{StaticResource StandardTripleLineItemTemplate}"
                         ItemClick="ItemView_ItemClick"
                         ContinuumNavigationTransitionInfo.ExitElementContainer="True">
@@ -128,22 +127,22 @@
                 </DataTemplate>
             </HubSection>
 
-            <HubSection x:Uid="HubSection4" Header="SECTION 4"
-                        DataContext="{Binding Groups[2]}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
+            <!--<HubSection x:Uid="HubSection4" Header="SECTION 4"
+                        DataContext="{Binding Groups[1]}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                 <DataTemplate>
                     <ListView 
                         AutomationProperties.AutomationId="ItemListViewSection4"
                         AutomationProperties.Name="Items In Group"
                         SelectionMode="None"
                         IsItemClickEnabled="True"
-                        ItemsSource="{Binding Items}"
+                        ItemsSource="{Binding cabins}"
                         ItemClick="ItemView_ItemClick"
                         ContinuumNavigationTransitionInfo.ExitElementContainer="True">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Margin="0,0,0,19">
-                                    <TextBlock Text="{Binding Title}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
-                                    <TextBlock Text="{Binding Subtitle}" Style="{ThemeResource ListViewItemSubheaderTextBlockStyle}"/>
+                                    <TextBlock Text="{Binding Name}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
+                                    <TextBlock Text="{Binding Description}" Style="{ThemeResource ListViewItemSubheaderTextBlockStyle}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -152,20 +151,22 @@
             </HubSection>
 
             <HubSection x:Uid="HubSection5" Header="SECTION 5"
-                        DataContext="{Binding Groups[3]}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
+                        DataContext="{Binding Groups[1]}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                 <DataTemplate>
                     <ListView 
                         AutomationProperties.AutomationId="ItemListViewSection5"
                         AutomationProperties.Name="Items In Group"
                         SelectionMode="None"
                         IsItemClickEnabled="True"
-                        ItemsSource="{Binding Items}"
+                        ItemsSource="{Binding cabins}"
                         ItemTemplate="{StaticResource StandardDoubleLineItemTemplate}"
                         ItemClick="ItemView_ItemClick"
                         ContinuumNavigationTransitionInfo.ExitElementContainer="True">
                     </ListView>
                 </DataTemplate>
-            </HubSection>
+            </HubSection>-->
         </Hub>
+        <ProgressRing x:Name="LoadingBar" Background="Transparent" Visibility="Collapsed" IsActive="False" Foreground="GreenYellow" IsEnabled="True" Height="4" HorizontalAlignment="Stretch" />
     </Grid>
+
 </Page>

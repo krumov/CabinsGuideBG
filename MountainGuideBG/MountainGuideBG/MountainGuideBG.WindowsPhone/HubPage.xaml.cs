@@ -79,8 +79,12 @@ namespace MountainGuideBG
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
+            this.LoadingBar.IsActive = true;
+            this.LoadingBar.Visibility = Visibility.Visible;
             var sampleDataGroups = await AppViewModel.GetMountainsAsync();
             this.DefaultViewModel["Groups"] = sampleDataGroups;
+            this.LoadingBar.IsActive = false;
+            this.LoadingBar.Visibility = Visibility.Collapsed;
         }
 
         /// <summary>

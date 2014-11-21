@@ -134,8 +134,6 @@ namespace MountainGuideBG
             //Mountain mountain = new Mountain();
             //mountain.Name = "Vitosha";
             //mountain.Description = "Витоша е планина в Западна България. Най-високата ѝ точка е Черни връх (2290 m[1]). Така тя се нарежда на четвърто място по височина в България след Рила, Пирин и Стара планина.";
-            ////mountain.cabins = new List<string>();
-            ////mountain.cabins.Add(mountain.Name);
 
             //await cabin.SaveAsync();
             //await mountain.SaveAsync();
@@ -149,8 +147,7 @@ namespace MountainGuideBG
             //Mountain mountain2 = new Mountain();
             //mountain2.Name = "Pirin";
             //mountain2.Description = "Площта на планината е 2585 квадратни километра, т.е. тя е сравнително компактна, малка планина, което се потвърждава и от голямата ѝ средна височина - 1033 метра. Дължината ѝ по права линия от северозапад на югоизток е 66 км, а максималната ѝ широчина нв направление югозапад-североизток е 40 километра — от град Сандански до село Обидим.";
-            ////mountain2.cabins = new List<string>();
-            ////mountain2.cabins.Add(mountain2.Name);
+
 
             //await cabin2.SaveAsync();
             //await mountain2.SaveAsync();

@@ -111,13 +111,6 @@ namespace MountainGuideBG.Data
                 cabins.Add(newCabin);
             }
 
-            //var cabins = cabinsFromParse.AsQueryable().Select(CabinModel.FromParseObject);
-
-            //foreach (var mountain in mountainsFromParse)
-            //{
-            //    var cabins = mountain.Get<ObservableCollection<Cabin>>("cabins");
-            //    var c = 6;
-            //}
 
             foreach (var mountain in mountainsFromParse)
             {
@@ -126,13 +119,23 @@ namespace MountainGuideBG.Data
                 newMountain.UniqueId = mountain.ObjectId;
                 newMountain.Name = mountain.Name;
                 newMountain.Description = mountain.Description;
+                newMountain.cabins = new ObservableCollection<CabinModel>();
                 newMountain.Image = new BitmapImage(mountain.Get<ParseFile>("image").Url);
 
 
                 this.Mountains.Add(newMountain);
             }
 
-        //    this.Mountains = (ObservableCollection<MountainModel>)mountainsFromParse.AsQueryable().Select(MountainModel.FromParseObject);
+            foreach (var mountain in this.Mountains)
+            {
+                foreach (var cabin in cabins)
+                {
+                    if (cabin.Mountain == mountain.Name)
+                    {
+                        mountain.cabins.Add(cabin);
+                    }
+                }
+            }
 
            var b = 5;
         }

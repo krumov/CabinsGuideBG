@@ -2,13 +2,13 @@
 <Roots >
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="DefaultViewModel" />
-    <RootPropertyPathName Name="Subtitle" />
-    <RootPropertyPathName Name="Title" />
-    <RootPropertyPathName Name="ImagePath" />
+    <RootPropertyPathName Name="Name" />
+    <RootPropertyPathName Name="Image" />
     <RootPropertyPathName Name="Description" />
     <RootPropertyPathName Name="Groups" />
-    <RootPropertyPathName Name="Items" />
+    <RootPropertyPathName Name="cabins" />
     <RootPropertyPathName Name="Group" />
+    <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="Item" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
@@ -68,8 +68,11 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Name" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="CharacterSpacing" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="FontSize" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
@@ -77,6 +80,8 @@
       <RootProperty Name="Stretch" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Automation.AutomationProperties">
       <RootMethod Name="GetName" />
@@ -89,12 +94,20 @@
       <RootProperty Name="Background" />
       <RootProperty Name="Sections" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressRing">
+      <RootProperty Name="Background" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="IsActive" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="IsEnabled" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="HorizontalAlignment" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.HubSection">
       <RootProperty Name="Header" />
       <RootProperty Name="DataContext" />
       <RootProperty Name="HeaderTemplate" />
       <RootProperty Name="ContentTemplate" />
-      <RootProperty Name="Width" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="SelectionMode" />
@@ -111,19 +124,6 @@
       <RootMethod Name="SetExitElementContainer" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
-    <RootType FullName="Windows.UI.Xaml.Controls.GridView">
-      <RootProperty Name="Margin" />
-      <RootProperty Name="ItemsSource" />
-      <RootProperty Name="ItemTemplate" />
-      <RootProperty Name="SelectionMode" />
-      <RootProperty Name="IsItemClickEnabled" />
-      <RootProperty Name="ItemsPanel" />
-      <RootEvent Name="ItemClick" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ItemsPanelTemplate">
-      <RootProperty Name="Template" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ItemsWrapGrid" />
     <RootType FullName="MountainGuideBG.HubPage" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.NavigationThemeTransition">
@@ -134,6 +134,9 @@
       <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="MountainGuideBG.SectionPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
+      <RootProperty Name="Content" />
+    </RootType>
     <RootType FullName="MountainGuideBG.ItemPage" />
   </Roots.RootTypes>
 </Roots>
