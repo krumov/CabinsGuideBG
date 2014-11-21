@@ -3,14 +3,17 @@
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="DefaultViewModel" />
     <RootPropertyPathName Name="Description" />
+    <RootPropertyPathName Name="Name" />
+    <RootPropertyPathName Name="Image" />
     <RootPropertyPathName Name="Title" />
-    <RootPropertyPathName Name="ImagePath" />
     <RootPropertyPathName Name="NavigationHelper" />
     <RootPropertyPathName Name="GoBackCommand" />
     <RootPropertyPathName Name="Section3Items" />
+    <RootPropertyPathName Name="cabins" />
     <RootPropertyPathName Name="Items" />
     <RootPropertyPathName Name="Group" />
     <RootPropertyPathName Name="Subtitle" />
+    <RootPropertyPathName Name="ImagePath" />
     <RootPropertyPathName Name="Item" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>

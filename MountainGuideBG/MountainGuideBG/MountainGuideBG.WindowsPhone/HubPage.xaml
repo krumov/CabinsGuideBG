@@ -1,13 +1,14 @@
 ﻿<Page
-    x:Class="MountainGuideBG.HubPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MountainGuideBG"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
-    d:DataContext="{Binding Source={d:DesignData Source={Binding }, Type=data:SampleDataSource}}"
     xmlns:data="using:MountainGuideBG.Data"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+    x:Class="MountainGuideBG.HubPage"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
+    d:DataContext="{Binding Source={d:DesignData Source={Binding ''}, Type=data:SampleDataSource}}"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -74,20 +75,46 @@
             <HubSection x:Uid="HubSection1" Header="Mountains" DataContext="{Binding Groups}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                 <DataTemplate>
                     <ListView
-                        ItemsSource="{Binding}"
-                        IsItemClickEnabled="True"
-                        ItemClick="GroupSection_ItemClick"
-                        ContinuumNavigationTransitionInfo.ExitElementContainer="True">
+						ItemsSource="{Binding}"
+						IsItemClickEnabled="True"
+						ItemClick="GroupSection_ItemClick"
+						ContinuumNavigationTransitionInfo.ExitElementContainer="True">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Margin="0,0,0,27.5">
-                                    <TextBlock Text="{Binding Name}" Name="testText" Style="{ThemeResource ListViewItemTextBlockStyle}" />
+                                    <TextBlock Text="{Binding Name}" x:Name="testText" Style="{ThemeResource ListViewItemTextBlockStyle}" />
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
                 </DataTemplate>
             </HubSection>
+
+
+
+
+            <!--<HubSection x:Uid="HubSection4" Header="SECTION 4"
+                        DataContext="{Binding Groups[1]}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
+                <DataTemplate>
+                    <ListView 
+                        AutomationProperties.AutomationId="ItemListViewSection4"
+                        AutomationProperties.Name="Items In Group"
+                        SelectionMode="None"
+                        IsItemClickEnabled="True"
+                        ItemsSource="{Binding cabins}"
+                        ItemClick="ItemView_ItemClick"
+                        ContinuumNavigationTransitionInfo.ExitElementContainer="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="0,0,0,19">
+                                    <TextBlock Text="{Binding Name}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
+                                    <TextBlock Text="{Binding Description}" Style="{ThemeResource ListViewItemSubheaderTextBlockStyle}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </DataTemplate>
+            </HubSection>-->
 
             <!--<HubSection x:Uid="HubSection2" Header="SECTION 2" Width="Auto"
                          DataContext="{Binding Groups[0]}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
@@ -111,46 +138,25 @@
                 </DataTemplate>
             </HubSection>-->
 
-            <HubSection x:Uid="HubSection2" Header="Cabins"
-                        DataContext="{Binding Groups[1]}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
+            <HubSection x:Uid="HubSection3" Header="Cabins"
+				DataContext="{Binding Groups[1]}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                 <DataTemplate>
                     <ListView 
-                        AutomationProperties.AutomationId="ItemGridView"
-                        AutomationProperties.Name="Items In Group"
-                        SelectionMode="None"
-                        IsItemClickEnabled="True"
-                        ItemsSource="{Binding cabins}"
-                        ItemTemplate="{StaticResource StandardTripleLineItemTemplate}"
-                        ItemClick="ItemView_ItemClick"
-                        ContinuumNavigationTransitionInfo.ExitElementContainer="True">
-                    </ListView>
+						AutomationProperties.AutomationId="ItemGridView"
+						AutomationProperties.Name="Items In Group"
+						SelectionMode="None"
+						IsItemClickEnabled="True"
+						ItemsSource="{Binding cabins}"
+						ItemTemplate="{StaticResource StandardTripleLineItemTemplate}"
+						ItemClick="ItemView_ItemClick"
+						ContinuumNavigationTransitionInfo.ExitElementContainer="True"/>
                 </DataTemplate>
             </HubSection>
 
-            <!--<HubSection x:Uid="HubSection4" Header="SECTION 4"
-                        DataContext="{Binding Groups[1]}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
-                <DataTemplate>
-                    <ListView 
-                        AutomationProperties.AutomationId="ItemListViewSection4"
-                        AutomationProperties.Name="Items In Group"
-                        SelectionMode="None"
-                        IsItemClickEnabled="True"
-                        ItemsSource="{Binding cabins}"
-                        ItemClick="ItemView_ItemClick"
-                        ContinuumNavigationTransitionInfo.ExitElementContainer="True">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Margin="0,0,0,19">
-                                    <TextBlock Text="{Binding Name}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
-                                    <TextBlock Text="{Binding Description}" Style="{ThemeResource ListViewItemSubheaderTextBlockStyle}"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </DataTemplate>
-            </HubSection>
 
-            <HubSection x:Uid="HubSection5" Header="SECTION 5"
+
+
+            <!--   <HubSection x:Uid="HubSection5" Header="SECTION 5"
                         DataContext="{Binding Groups[1]}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                 <DataTemplate>
                     <ListView 
@@ -165,8 +171,24 @@
                     </ListView>
                 </DataTemplate>
             </HubSection>-->
+
+
+            <HubSection x:Uid="HubSection5" Header="Map"
+				DataContext="{Binding Groups[1]}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
+                <DataTemplate>
+                    <Grid Margin="0,20,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Maps:MapControl Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+
         </Hub>
         <ProgressRing x:Name="LoadingBar" Background="Transparent" Visibility="Collapsed" IsActive="False" Foreground="GreenYellow" IsEnabled="True" Height="4" HorizontalAlignment="Stretch" />
+        
     </Grid>
 
 </Page>
