@@ -17,6 +17,8 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using MountainGuideBG.Common;
 using Parse;
+using MountainGuideBG.Models;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Universal Hub Application project template is documented at http://go.microsoft.com/fwlink/?LinkID=391955
 
@@ -38,8 +40,10 @@ namespace MountainGuideBG
         public App()
         {
             this.InitializeComponent();
-            this.Suspending += this.OnSuspending; 
-            
+            this.Suspending += this.OnSuspending;
+
+            ParseObject.RegisterSubclass<Cabin>();
+            ParseObject.RegisterSubclass<Mountain>();
             ParseClient.Initialize("IldIO7LbSO62QJ6AhHHXWu8o1Ar6YLwnO8Ok0JRc", "b8S2QLF2uEc9Cec3juGaXB68FT4q1tJ62Gae7dwy");
         }
 
@@ -119,6 +123,15 @@ namespace MountainGuideBG
 
             // Ensure the current window is active
             Window.Current.Activate();
+
+            BitmapImage image = new BitmapImage(new Uri("Assets/aleko.jpg"));
+
+            Cabin cabin = new Cabin();
+            cabin.Name = "Aleko";
+            cabin.Mountain = "Vitosha";
+            cabin.Description = "Това е първата хижа на Витоша - построена е през 1924 г. от туристическо дружество “Алеко Константинов”- клон на БТС.";
+            cabin.Image = 
+
         }
 
 #if WINDOWS_PHONE_APP

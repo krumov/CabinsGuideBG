@@ -1,10 +1,44 @@
-﻿using System;
+﻿using Parse;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace MountainGuideBG.Models
 {
-    class Cabin
+    [ParseClassName("Cabins")]
+    class Cabin: ParseObject
     {
+        public Cabin()
+        {
+
+        }
+
+        [ParseFieldName("name")]
+        public string Name
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty<string>(value); }
+        }
+
+        [ParseFieldName("mountain")]
+        public string Mountain
+{ 
+            get { return GetProperty<string>(); }
+            set { SetProperty<string>(value); }
+}
+
+        [ParseFieldName("description")]
+        public string Description
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty<string>(value); }
+        }
+
+        [ParseFieldName("image")]
+        public ParseFile Image
+        {
+            get { return GetProperty<ParseFile>(); }
+            set { SetProperty<ParseFile>(value); }
+        }
     }
 }
