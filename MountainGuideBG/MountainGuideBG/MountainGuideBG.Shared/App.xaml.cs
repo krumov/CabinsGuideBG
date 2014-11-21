@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using MountainGuideBG.Common;
+using Parse;
 
 // The Universal Hub Application project template is documented at http://go.microsoft.com/fwlink/?LinkID=391955
 
@@ -37,7 +38,9 @@ namespace MountainGuideBG
         public App()
         {
             this.InitializeComponent();
-            this.Suspending += this.OnSuspending;
+            this.Suspending += this.OnSuspending; 
+            
+            ParseClient.Initialize("IldIO7LbSO62QJ6AhHHXWu8o1Ar6YLwnO8Ok0JRc", "b8S2QLF2uEc9Cec3juGaXB68FT4q1tJ62Gae7dwy");
         }
 
         /// <summary>
