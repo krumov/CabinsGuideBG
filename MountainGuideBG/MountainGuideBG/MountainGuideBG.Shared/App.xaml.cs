@@ -140,20 +140,6 @@ namespace MountainGuideBG
             //await cabin.SaveAsync();
             //await mountain.SaveAsync();
 
-            Cabin cabin2 = new Cabin();
-            cabin2.Name = "Безбог";
-            cabin2.Mountain = "Pirin";
-            cabin2.Description = "Хижа Безбог е най-новата и модерна хижа в Пирин, една от трите разположени на Полежанското странично било. Тя е разположена в подножието на връх Безбог край Безбожкото езеро на височина 2236 м.";
-            cabin2.Coordinates = new ParseGeoPoint(41.4402,23.3127);
-
-            Mountain mountain2 = new Mountain();
-            mountain2.Name = "Pirin";
-            mountain2.Description = "Площта на планината е 2585 квадратни километра, т.е. тя е сравнително компактна, малка планина, което се потвърждава и от голямата ѝ средна височина - 1033 метра. Дължината ѝ по права линия от северозапад на югоизток е 66 км, а максималната ѝ широчина нв направление югозапад-североизток е 40 километра — от град Сандански до село Обидим.";
-            mountain2.cabins = new System.Collections.ObjectModel.ObservableCollection<Cabin>();
-            mountain2.cabins.Add(cabin2);
-
-            await cabin2.SaveAsync();
-            await mountain2.SaveAsync();
         }
 
 #if WINDOWS_PHONE_APP

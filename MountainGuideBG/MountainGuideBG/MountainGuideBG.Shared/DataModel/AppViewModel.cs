@@ -1,9 +1,11 @@
 ﻿using MountainGuideBG.DataModel;
+using MountainGuideBG.Models;
 using Parse;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Windows.Data.Json;
 using Windows.Storage;
@@ -66,7 +68,17 @@ namespace MountainGuideBG.Data
             if (this.mountains.Count != 0)
                 return;
 
-            var testObject = await ParseObject.GetQuery("TestObject").FindAsync();
+            var mountainsFromParse =  await new ParseQuery<Mountain>().Include("cabins")
+                .FindAsync(
+                CancellationToken.None);
+
+            //foreach (var mountain in mountainsFromParse)
+            //{
+            //    var cabins = mountain.Get<object>("cabins");
+            //    var c = 6;
+            //}
+
+           // this.mountains = (ObservableCollection<MountainModel>)mountainsFromParse.AsQueryable().Select(MountainModel.FromParseObject);
 
             var b = 5;
         }

@@ -88,9 +88,6 @@
     <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\bodrost.jpg">
       <PackagePath>Assets\bodrost.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\DataModel\SampleData.json">
-      <PackagePath>DataModel\SampleData.json</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.WindowsPhone\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>

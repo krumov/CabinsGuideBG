@@ -20,7 +20,7 @@ namespace MountainGuideBG.DataModel
                     Name = parseObj["name"].ToString(),
                     Mountain = parseObj["mountain"].ToString(),
                     Description = parseObj["description"].ToString(),
-                    Image = new BitmapImage(parseObj.Get<ParseFile>("image").Url)
+                    Image = new BitmapImage(parseObj.Get<ParseFile>(parseObj["name"].ToString().ToLower()).Url)
                 };
             }
         }
