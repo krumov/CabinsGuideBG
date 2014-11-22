@@ -51,8 +51,8 @@
 
                 <ScrollViewer ZoomMode="Enabled">
                     <Image Source="{Binding Image}" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  />
-
                 </ScrollViewer>
+            
                 <TextBlock Grid.Row="2" Text="{Binding Description}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" FontSize="28"/>
 
         </Grid>

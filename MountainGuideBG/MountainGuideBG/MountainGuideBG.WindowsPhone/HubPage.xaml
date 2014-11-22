@@ -15,10 +15,7 @@
         <ResourceDictionary>
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Default">
-                    <ImageBrush x:Key="HubBackgroundImageBrush" ImageSource="Assets/HubBackground.png"/>
-                </ResourceDictionary>
-                <ResourceDictionary x:Key="HighContrast">
-                    <ImageBrush x:Key="HubBackgroundImageBrush" ImageSource="{x:Null}"/>
+                    <ImageBrush x:Key="HubBackgroundImageBrush" ImageSource="Assets/multiplane_landscape.png"/>
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
 
@@ -30,7 +27,7 @@
             <DataTemplate x:Key="Standard200x180TileItemTemplate">
                 <Grid Margin="0,0,9.5,9.5" Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}">
                     <Image Source="{Binding Image}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Name}" Height="138.5" Width="138.5"/>
-                    <TextBlock Text="{Binding Name}" VerticalAlignment="Bottom" Margin="9.5,0,0,6.5" Style="{ThemeResource BaseTextBlockStyle}"/>
+                    <TextBlock Text="{Binding Name}" Foreground="MidnightBlue" VerticalAlignment="Bottom" Margin="9.5,0,0,6.5" Style="{ThemeResource BaseTextBlockStyle}"/>
                 </Grid>
             </DataTemplate>
 
@@ -45,8 +42,8 @@
                         <Image Source="{Binding Image}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Name}" Height="79" Width="79"/>
                     </Border>
                     <StackPanel Grid.Column="1" Margin="14.5,0,0,0">
-                        <TextBlock Text="{Binding Name}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
-                        <TextBlock Text="{Binding Description}" Style="{ThemeResource ListViewItemContentTextBlockStyle}" Foreground="{ThemeResource PhoneMidBrush}" />
+                        <TextBlock Text="{Binding Name}" Foreground="MidnightBlue" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
+                        <TextBlock Text="{Binding Description}" Foreground="MidnightBlue" Style="{ThemeResource ListViewItemContentTextBlockStyle}" />
                     </StackPanel>
                 </Grid>
             </DataTemplate>
@@ -62,7 +59,7 @@
                         <Image Source="{Binding Image}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Name}" Height="79" Width="79"/>
                     </Border>
                     <StackPanel Grid.Column="1" Margin="14.5,0,0,0">
-                        <TextBlock Text="{Binding Name}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
+                        <TextBlock Text="{Binding Name}" Foreground="DarkCyan" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
                     </StackPanel>
                 </Grid>
             </DataTemplate>
@@ -70,9 +67,9 @@
     </Page.Resources>
 
     <Grid x:Name="LayoutRoot">
-        <Hub x:Name="Hub" x:Uid="Hub" Header="Mountain Guide" Background="{ThemeResource HubBackgroundImageBrush}">
+        <Hub x:Name="Hub" x:Uid="Hub" Header="Mountain Guide" Foreground="DarkCyan"  Background="{ThemeResource HubBackgroundImageBrush}">
 
-            <HubSection x:Uid="HubSection1" Header="Mountains" DataContext="{Binding Groups}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
+            <HubSection x:Uid="HubSection1" Header="Mountains" Foreground="DarkCyan"  DataContext="{Binding Groups}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                 <DataTemplate>
                     <ListView
 						ItemsSource="{Binding}"
@@ -88,7 +85,7 @@
                                             <MenuFlyoutItem DataContext="{Binding}" Text="Информация за планината" Click="MountainInfoMenuItem_Click" />
                                         </MenuFlyout>
                                     </FlyoutBase.AttachedFlyout>
-                                    <TextBlock Text="{Binding Name}" x:Name="testText" Style="{ThemeResource ListViewItemTextBlockStyle}" />
+                                    <TextBlock Text="{Binding Name}" Foreground="MidnightBlue" x:Name="testText" Style="{ThemeResource ListViewItemTextBlockStyle}" />
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -187,15 +184,15 @@
                             <RowDefinition Height="100"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <TextBlock Text="Готов ли си за планината?" FontSize="34" TextWrapping="Wrap"/>
+                        <TextBlock Text="Готов ли си за планината?" Foreground="MidnightBlue" FontSize="34" TextWrapping="Wrap"/>
 
-                        <Button Grid.Row="1" Content="Да проверим..." FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Click="TestButton_Click"/>
+                        <Button Grid.Row="1" Content="Да проверим..." Foreground="MidnightBlue" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Click="TestButton_Click"/>
                     </Grid>
                 </DataTemplate>
             </HubSection>
 
         </Hub>
-        <ProgressRing x:Name="LoadingBar" Background="Transparent" Visibility="Collapsed" IsActive="False" Foreground="GreenYellow" IsEnabled="True" Height="4" HorizontalAlignment="Stretch" />
+        <ProgressRing x:Name="LoadingBar" Background="Transparent" Visibility="Collapsed" IsActive="False" Foreground="MidnightBlue" IsEnabled="True" Height="4" HorizontalAlignment="Stretch" />
         
     </Grid>
 
