@@ -139,14 +139,14 @@
             </HubSection>-->
 
             <HubSection x:Uid="HubSection3" Header="Cabins"
-				DataContext="{Binding Groups[1]}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
+				DataContext="{Binding Cabins}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                 <DataTemplate>
                     <ListView 
 						AutomationProperties.AutomationId="ItemGridView"
 						AutomationProperties.Name="Items In Group"
 						SelectionMode="None"
 						IsItemClickEnabled="True"
-						ItemsSource="{Binding cabins}"
+						ItemsSource="{Binding}"
 						ItemTemplate="{StaticResource StandardTripleLineItemTemplate}"
 						ItemClick="ItemView_ItemClick"
 						ContinuumNavigationTransitionInfo.ExitElementContainer="True"/>

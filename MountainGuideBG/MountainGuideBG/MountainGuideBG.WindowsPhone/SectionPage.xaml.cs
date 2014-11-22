@@ -68,10 +68,10 @@ namespace MountainGuideBG
         /// <see cref="Frame.Navigate(Type, object)"/> when this page was initially requested and
         /// a dictionary of state preserved by this page during an earlier
         /// session.  The state will be null the first time a page is visited.</param>
-        private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
+        private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
             // TODO: Create an appropriate data model for your problem domain to replace the sample data.
-            var group = await AppViewModel.GetMountainAsync((string)e.NavigationParameter);
+            var group = (MountainModel)e.NavigationParameter;
             this.DefaultViewModel["Group"] = group;
         }
 

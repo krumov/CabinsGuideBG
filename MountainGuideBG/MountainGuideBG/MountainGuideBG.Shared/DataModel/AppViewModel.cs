@@ -32,6 +32,31 @@ namespace MountainGuideBG.Data
     {
         private static AppViewModel appData = new AppViewModel();
 
+        private ObservableCollection<CabinModel> cabins = new ObservableCollection<CabinModel>();
+        public ObservableCollection<CabinModel> Cabins
+        {
+            get
+            {
+                if (this.cabins == null)
+                {
+                    this.Cabins = new ObservableCollection<CabinModel>();
+                }
+                return this.cabins;
+            }
+            set
+            {
+                if (this.cabins == null)
+                {
+                    this.cabins = new ObservableCollection<CabinModel>();
+                }
+                this.cabins.Clear();
+                foreach (var item in value)
+                {
+                    this.cabins.Add(item);
+                }
+            }
+        }
+
         private ObservableCollection<MountainModel> mountains = new ObservableCollection<MountainModel>();
         public ObservableCollection<MountainModel> Mountains
         {
@@ -55,6 +80,13 @@ namespace MountainGuideBG.Data
                     this.mountains.Add(item);
                 }
             }
+        }
+
+        public static  IEnumerable<CabinModel> GetCabins()
+        {
+         //   await appData.GetParseDataAsync();
+
+            return appData.Cabins;
         }
 
         public static async Task<IEnumerable<MountainModel>> GetMountainsAsync()
@@ -95,7 +127,6 @@ namespace MountainGuideBG.Data
                 .FindAsync(
                 CancellationToken.None);
 
-            var cabins = new List<CabinModel>();
 
             foreach (var cabin in cabinsFromParse)
             {
@@ -108,7 +139,7 @@ namespace MountainGuideBG.Data
                 newCabin.Image = new BitmapImage(cabin.Get<ParseFile>("image").Url);
                 
 
-                cabins.Add(newCabin);
+                this.Cabins.Add(newCabin);
             }
 
 
@@ -128,7 +159,7 @@ namespace MountainGuideBG.Data
 
             foreach (var mountain in this.Mountains)
             {
-                foreach (var cabin in cabins)
+                foreach (var cabin in this.Cabins)
                 {
                     if (cabin.Mountain == mountain.Name)
                     {

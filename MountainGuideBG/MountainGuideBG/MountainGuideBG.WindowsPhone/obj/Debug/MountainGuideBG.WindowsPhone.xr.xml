@@ -6,10 +6,11 @@
     <RootPropertyPathName Name="Image" />
     <RootPropertyPathName Name="Description" />
     <RootPropertyPathName Name="Groups" />
-    <RootPropertyPathName Name="cabins" />
-    <RootPropertyPathName Name="Group" />
-    <RootPropertyPathName Name="Title" />
+    <RootPropertyPathName Name="Cabins" />
     <RootPropertyPathName Name="Item" />
+    <RootPropertyPathName Name="Group" />
+    <RootPropertyPathName Name="cabins" />
+    <RootPropertyPathName Name="Title" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application" />
@@ -18,6 +19,7 @@
       <RootProperty Name="Resources" />
       <RootProperty Name="Content" />
       <RootProperty Name="Background" />
+      <RootProperty Name="BottomAppBar" />
       <RootProperty Name="Transitions" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
@@ -70,10 +72,10 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="TextWrapping" />
-      <RootProperty Name="CharacterSpacing" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="TextWrapping" />
       <RootProperty Name="FontSize" />
+      <RootProperty Name="CharacterSpacing" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
@@ -133,15 +135,24 @@
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="MountainGuideBG.HubPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
+      <RootProperty Name="PrimaryCommands" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
+      <RootProperty Name="Icon" />
+      <RootProperty Name="Label" />
+      <RootEvent Name="Click" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.NavigationThemeTransition">
       <RootProperty Name="DefaultNavigationTransitionInfo" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />
-    <RootType FullName="MountainGuideBG.SectionPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="Content" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />
+    <RootType FullName="MountainGuideBG.MountainInfo" />
+    <RootType FullName="MountainGuideBG.SectionPage" />
     <RootType FullName="MountainGuideBG.ItemPage" />
   </Roots.RootTypes>
 </Roots>
