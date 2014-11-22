@@ -92,10 +92,20 @@ namespace MountainGuideBG
                 ShowMessageBox();
             }
 
+            string uriToLaunch =String.Format( @"bingmaps:?rtp=pos.{0}_{1}~pos.{2}_{3}",position.Coordinate.Latitude,position.Coordinate.Longitude,item.Latitude,item.Longtitude);
+            var uri = new Uri(uriToLaunch);
+
+            // Launch the URI
+            var success = await Windows.System.Launcher.LaunchUriAsync(uri);
+           
             //ShowRouteToCabin(item);
 
+            BasicGeoposition cabinLocation = new BasicGeoposition();
+            cabinLocation.Latitude = item.Latitude;
+            cabinLocation.Longitude = item.Longtitude;
+            Geopoint cabinPoint = new Geopoint(cabinLocation);
 
-            await this.myMap.TrySetViewAsync(position.Coordinate.Point, 18D);
+            await this.myMap.TrySetViewAsync(cabinPoint, 14D);
 
             this.LoadingBar.IsActive = false;
             this.LoadingBar.Visibility = Visibility.Collapsed;
