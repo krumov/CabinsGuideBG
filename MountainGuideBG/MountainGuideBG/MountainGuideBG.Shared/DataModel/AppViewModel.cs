@@ -136,9 +136,10 @@ namespace MountainGuideBG.Data
                 newCabin.Name = cabin.Name;
                 newCabin.Mountain = cabin.Mountain;
                 newCabin.Description = cabin.Description;
+                newCabin.Latitude = cabin.Coordinates.Latitude;
+                newCabin.Longtitude = cabin.Coordinates.Longitude;
                 newCabin.Image = new BitmapImage(cabin.Get<ParseFile>("image").Url);
                 
-
                 this.Cabins.Add(newCabin);
             }
 
@@ -153,7 +154,6 @@ namespace MountainGuideBG.Data
                 newMountain.cabins = new ObservableCollection<CabinModel>();
                 newMountain.Image = new BitmapImage(mountain.Get<ParseFile>("image").Url);
 
-
                 this.Mountains.Add(newMountain);
             }
 
@@ -167,8 +167,6 @@ namespace MountainGuideBG.Data
                     }
                 }
             }
-
-           var b = 5;
         }
     }
 }

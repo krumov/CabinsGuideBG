@@ -51,3 +51,13 @@ C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\M
 C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.WindowsPhone\bin\Debug\MountainInfo.xbf
 C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.WindowsPhone\obj\Debug\MountainInfo.xaml
 C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.WindowsPhone\obj\Debug\MountainInfo.xbf
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.WindowsPhone\bin\Debug\CheckList.xbf
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.WindowsPhone\bin\Debug\Map.xbf
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.WindowsPhone\obj\Debug\CheckList.g.i.cs
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.WindowsPhone\obj\Debug\CheckList.g.cs
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.WindowsPhone\obj\Debug\Map.g.i.cs
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.WindowsPhone\obj\Debug\Map.g.cs
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.WindowsPhone\obj\Debug\CheckList.xaml
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.WindowsPhone\obj\Debug\CheckList.xbf
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.WindowsPhone\obj\Debug\Map.xaml
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.WindowsPhone\obj\Debug\Map.xbf

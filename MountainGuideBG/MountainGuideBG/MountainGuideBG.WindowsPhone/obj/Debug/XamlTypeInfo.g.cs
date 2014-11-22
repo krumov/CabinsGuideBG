@@ -124,8 +124,8 @@ namespace MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[11];
-            _typeNameTable[0] = "MountainGuideBG.HubPage";
+            _typeNameTable = new string[13];
+            _typeNameTable[0] = "MountainGuideBG.CheckList";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "MountainGuideBG.Common.NavigationHelper";
@@ -133,12 +133,14 @@ namespace MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo
             _typeNameTable[5] = "MountainGuideBG.Common.ObservableDictionary";
             _typeNameTable[6] = "Object";
             _typeNameTable[7] = "String";
-            _typeNameTable[8] = "MountainGuideBG.MountainInfo";
-            _typeNameTable[9] = "MountainGuideBG.SectionPage";
-            _typeNameTable[10] = "MountainGuideBG.ItemPage";
+            _typeNameTable[8] = "MountainGuideBG.HubPage";
+            _typeNameTable[9] = "MountainGuideBG.Map";
+            _typeNameTable[10] = "MountainGuideBG.MountainInfo";
+            _typeNameTable[11] = "MountainGuideBG.SectionPage";
+            _typeNameTable[12] = "MountainGuideBG.ItemPage";
 
-            _typeTable = new global::System.Type[11];
-            _typeTable[0] = typeof(global::MountainGuideBG.HubPage);
+            _typeTable = new global::System.Type[13];
+            _typeTable[0] = typeof(global::MountainGuideBG.CheckList);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::MountainGuideBG.Common.NavigationHelper);
@@ -146,9 +148,11 @@ namespace MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo
             _typeTable[5] = typeof(global::MountainGuideBG.Common.ObservableDictionary);
             _typeTable[6] = typeof(global::System.Object);
             _typeTable[7] = typeof(global::System.String);
-            _typeTable[8] = typeof(global::MountainGuideBG.MountainInfo);
-            _typeTable[9] = typeof(global::MountainGuideBG.SectionPage);
-            _typeTable[10] = typeof(global::MountainGuideBG.ItemPage);
+            _typeTable[8] = typeof(global::MountainGuideBG.HubPage);
+            _typeTable[9] = typeof(global::MountainGuideBG.Map);
+            _typeTable[10] = typeof(global::MountainGuideBG.MountainInfo);
+            _typeTable[11] = typeof(global::MountainGuideBG.SectionPage);
+            _typeTable[12] = typeof(global::MountainGuideBG.ItemPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -183,11 +187,13 @@ namespace MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_HubPage() { return new global::MountainGuideBG.HubPage(); }
+        private object Activate_0_CheckList() { return new global::MountainGuideBG.CheckList(); }
         private object Activate_5_ObservableDictionary() { return new global::MountainGuideBG.Common.ObservableDictionary(); }
-        private object Activate_8_MountainInfo() { return new global::MountainGuideBG.MountainInfo(); }
-        private object Activate_9_SectionPage() { return new global::MountainGuideBG.SectionPage(); }
-        private object Activate_10_ItemPage() { return new global::MountainGuideBG.ItemPage(); }
+        private object Activate_8_HubPage() { return new global::MountainGuideBG.HubPage(); }
+        private object Activate_9_Map() { return new global::MountainGuideBG.Map(); }
+        private object Activate_10_MountainInfo() { return new global::MountainGuideBG.MountainInfo(); }
+        private object Activate_11_SectionPage() { return new global::MountainGuideBG.SectionPage(); }
+        private object Activate_12_ItemPage() { return new global::MountainGuideBG.ItemPage(); }
         private void MapAdd_5_ObservableDictionary(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
@@ -206,9 +212,9 @@ namespace MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  MountainGuideBG.HubPage
+            case 0:   //  MountainGuideBG.CheckList
                 userType = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_HubPage;
+                userType.Activator = Activate_0_CheckList;
                 userType.AddMemberName("NavigationHelper");
                 userType.AddMemberName("DefaultViewModel");
                 userType.SetIsLocalType();
@@ -250,27 +256,45 @@ namespace MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo
                 xamlType = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 8:   //  MountainGuideBG.MountainInfo
+            case 8:   //  MountainGuideBG.HubPage
                 userType = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_MountainInfo;
+                userType.Activator = Activate_8_HubPage;
                 userType.AddMemberName("NavigationHelper");
                 userType.AddMemberName("DefaultViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 9:   //  MountainGuideBG.SectionPage
+            case 9:   //  MountainGuideBG.Map
                 userType = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_SectionPage;
+                userType.Activator = Activate_9_Map;
                 userType.AddMemberName("NavigationHelper");
                 userType.AddMemberName("DefaultViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  MountainGuideBG.ItemPage
+            case 10:   //  MountainGuideBG.MountainInfo
                 userType = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_10_ItemPage;
+                userType.Activator = Activate_10_MountainInfo;
+                userType.AddMemberName("NavigationHelper");
+                userType.AddMemberName("DefaultViewModel");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 11:   //  MountainGuideBG.SectionPage
+                userType = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_11_SectionPage;
+                userType.AddMemberName("NavigationHelper");
+                userType.AddMemberName("DefaultViewModel");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 12:   //  MountainGuideBG.ItemPage
+                userType = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_12_ItemPage;
                 userType.AddMemberName("NavigationHelper");
                 userType.AddMemberName("DefaultViewModel");
                 userType.SetIsLocalType();
@@ -281,42 +305,62 @@ namespace MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo
         }
 
 
-        private object get_0_HubPage_NavigationHelper(object instance)
+        private object get_0_CheckList_NavigationHelper(object instance)
+        {
+            var that = (global::MountainGuideBG.CheckList)instance;
+            return that.NavigationHelper;
+        }
+        private object get_1_CheckList_DefaultViewModel(object instance)
+        {
+            var that = (global::MountainGuideBG.CheckList)instance;
+            return that.DefaultViewModel;
+        }
+        private object get_2_HubPage_NavigationHelper(object instance)
         {
             var that = (global::MountainGuideBG.HubPage)instance;
             return that.NavigationHelper;
         }
-        private object get_1_HubPage_DefaultViewModel(object instance)
+        private object get_3_HubPage_DefaultViewModel(object instance)
         {
             var that = (global::MountainGuideBG.HubPage)instance;
             return that.DefaultViewModel;
         }
-        private object get_2_MountainInfo_NavigationHelper(object instance)
+        private object get_4_Map_NavigationHelper(object instance)
+        {
+            var that = (global::MountainGuideBG.Map)instance;
+            return that.NavigationHelper;
+        }
+        private object get_5_Map_DefaultViewModel(object instance)
+        {
+            var that = (global::MountainGuideBG.Map)instance;
+            return that.DefaultViewModel;
+        }
+        private object get_6_MountainInfo_NavigationHelper(object instance)
         {
             var that = (global::MountainGuideBG.MountainInfo)instance;
             return that.NavigationHelper;
         }
-        private object get_3_MountainInfo_DefaultViewModel(object instance)
+        private object get_7_MountainInfo_DefaultViewModel(object instance)
         {
             var that = (global::MountainGuideBG.MountainInfo)instance;
             return that.DefaultViewModel;
         }
-        private object get_4_SectionPage_NavigationHelper(object instance)
+        private object get_8_SectionPage_NavigationHelper(object instance)
         {
             var that = (global::MountainGuideBG.SectionPage)instance;
             return that.NavigationHelper;
         }
-        private object get_5_SectionPage_DefaultViewModel(object instance)
+        private object get_9_SectionPage_DefaultViewModel(object instance)
         {
             var that = (global::MountainGuideBG.SectionPage)instance;
             return that.DefaultViewModel;
         }
-        private object get_6_ItemPage_NavigationHelper(object instance)
+        private object get_10_ItemPage_NavigationHelper(object instance)
         {
             var that = (global::MountainGuideBG.ItemPage)instance;
             return that.NavigationHelper;
         }
-        private object get_7_ItemPage_DefaultViewModel(object instance)
+        private object get_11_ItemPage_DefaultViewModel(object instance)
         {
             var that = (global::MountainGuideBG.ItemPage)instance;
             return that.DefaultViewModel;
@@ -329,52 +373,76 @@ namespace MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo
 
             switch (longMemberName)
             {
+            case "MountainGuideBG.CheckList.NavigationHelper":
+                userType = (global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MountainGuideBG.CheckList");
+                xamlMember = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlMember(this, "NavigationHelper", "MountainGuideBG.Common.NavigationHelper");
+                xamlMember.Getter = get_0_CheckList_NavigationHelper;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "MountainGuideBG.CheckList.DefaultViewModel":
+                userType = (global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MountainGuideBG.CheckList");
+                xamlMember = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "MountainGuideBG.Common.ObservableDictionary");
+                xamlMember.Getter = get_1_CheckList_DefaultViewModel;
+                xamlMember.SetIsReadOnly();
+                break;
             case "MountainGuideBG.HubPage.NavigationHelper":
                 userType = (global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MountainGuideBG.HubPage");
                 xamlMember = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlMember(this, "NavigationHelper", "MountainGuideBG.Common.NavigationHelper");
-                xamlMember.Getter = get_0_HubPage_NavigationHelper;
+                xamlMember.Getter = get_2_HubPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "MountainGuideBG.HubPage.DefaultViewModel":
                 userType = (global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MountainGuideBG.HubPage");
                 xamlMember = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "MountainGuideBG.Common.ObservableDictionary");
-                xamlMember.Getter = get_1_HubPage_DefaultViewModel;
+                xamlMember.Getter = get_3_HubPage_DefaultViewModel;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "MountainGuideBG.Map.NavigationHelper":
+                userType = (global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MountainGuideBG.Map");
+                xamlMember = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlMember(this, "NavigationHelper", "MountainGuideBG.Common.NavigationHelper");
+                xamlMember.Getter = get_4_Map_NavigationHelper;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "MountainGuideBG.Map.DefaultViewModel":
+                userType = (global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MountainGuideBG.Map");
+                xamlMember = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "MountainGuideBG.Common.ObservableDictionary");
+                xamlMember.Getter = get_5_Map_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "MountainGuideBG.MountainInfo.NavigationHelper":
                 userType = (global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MountainGuideBG.MountainInfo");
                 xamlMember = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlMember(this, "NavigationHelper", "MountainGuideBG.Common.NavigationHelper");
-                xamlMember.Getter = get_2_MountainInfo_NavigationHelper;
+                xamlMember.Getter = get_6_MountainInfo_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "MountainGuideBG.MountainInfo.DefaultViewModel":
                 userType = (global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MountainGuideBG.MountainInfo");
                 xamlMember = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "MountainGuideBG.Common.ObservableDictionary");
-                xamlMember.Getter = get_3_MountainInfo_DefaultViewModel;
+                xamlMember.Getter = get_7_MountainInfo_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "MountainGuideBG.SectionPage.NavigationHelper":
                 userType = (global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MountainGuideBG.SectionPage");
                 xamlMember = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlMember(this, "NavigationHelper", "MountainGuideBG.Common.NavigationHelper");
-                xamlMember.Getter = get_4_SectionPage_NavigationHelper;
+                xamlMember.Getter = get_8_SectionPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "MountainGuideBG.SectionPage.DefaultViewModel":
                 userType = (global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MountainGuideBG.SectionPage");
                 xamlMember = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "MountainGuideBG.Common.ObservableDictionary");
-                xamlMember.Getter = get_5_SectionPage_DefaultViewModel;
+                xamlMember.Getter = get_9_SectionPage_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "MountainGuideBG.ItemPage.NavigationHelper":
                 userType = (global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MountainGuideBG.ItemPage");
                 xamlMember = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlMember(this, "NavigationHelper", "MountainGuideBG.Common.NavigationHelper");
-                xamlMember.Getter = get_6_ItemPage_NavigationHelper;
+                xamlMember.Getter = get_10_ItemPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "MountainGuideBG.ItemPage.DefaultViewModel":
                 userType = (global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MountainGuideBG.ItemPage");
                 xamlMember = new global::MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "MountainGuideBG.Common.ObservableDictionary");
-                xamlMember.Getter = get_7_ItemPage_DefaultViewModel;
+                xamlMember.Getter = get_11_ItemPage_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             }

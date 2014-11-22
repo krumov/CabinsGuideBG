@@ -20,6 +20,7 @@ using Parse;
 using MountainGuideBG.Models;
 using Windows.UI.Xaml.Media.Imaging;
 using System.Xml.Linq;
+using Windows.System;
 
 // The Universal Hub Application project template is documented at http://go.microsoft.com/fwlink/?LinkID=391955
 
@@ -159,7 +160,7 @@ namespace MountainGuideBG
             //await cabin3.SaveAsync();
             //await mountain2.SaveAsync();
         }
-
+     
 #if WINDOWS_PHONE_APP
         /// <summary>
         /// Restores the content transitions after the app has launched.

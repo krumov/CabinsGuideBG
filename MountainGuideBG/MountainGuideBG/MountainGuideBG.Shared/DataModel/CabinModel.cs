@@ -21,6 +21,8 @@ namespace MountainGuideBG.DataModel
                     Name = parseObj.Name,
                     Mountain = parseObj.Mountain,
                     Description = parseObj.Description,
+                    Latitude = parseObj.Coordinates.Latitude,
+                    Longtitude = parseObj.Coordinates.Longitude,
                     Image = new BitmapImage(parseObj.Get<ParseFile>(parseObj.Name.ToLower()).Url)
                 };
             }
@@ -30,7 +32,9 @@ namespace MountainGuideBG.DataModel
         public string UniqueId { get;  set; }
         public string Name { get;  set; }
         public string Mountain { get;  set; }
-        public string Description { get;  set; }
+        public string Description { get; set; }
+        public double Latitude { get; set; }
+        public double Longtitude { get; set; }
         public BitmapImage Image { get;  set; }
 
         public override string ToString()
