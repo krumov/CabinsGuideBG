@@ -20,7 +20,7 @@
         </TransitionCollection>
     </Page.Transitions>
     <ScrollViewer>
-        <Grid x:Name="LayoutRoot">
+        <Grid x:Name="LayoutRoot" Background="MediumSeaGreen">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
                 <EntranceThemeTransition/>
@@ -47,13 +47,10 @@
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="6*"/>
             </Grid.RowDefinitions>
-            <Button x:ConnectionId='1' VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="View Route to cabin" FontSize="24"                               />
+                <Button x:ConnectionId='1' VerticalAlignment="Stretch" Grid.Row="0"  HorizontalAlignment="Stretch" Content="View Route to cabin" FontSize="24"                               />
 
-                <ScrollViewer ZoomMode="Enabled">
-                    <Image Source="{Binding Image}" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  />
-                </ScrollViewer>
-            
-                <TextBlock Grid.Row="2" Text="{Binding Description}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" FontSize="28"/>
+                <Image Source="{Binding Image}" Grid.Row="1"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  />
+            <TextBlock Grid.Row="2" Text="{Binding Description}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" FontSize="28"/>
 
         </Grid>
     </Grid>

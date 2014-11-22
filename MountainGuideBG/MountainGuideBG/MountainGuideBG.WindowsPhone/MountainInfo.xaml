@@ -24,7 +24,7 @@
         </TransitionCollection>
     </Page.Transitions>
     <ScrollViewer>
-    <Grid x:Name="LayoutRoot">
+        <Grid x:Name="LayoutRoot" Background="MediumSeaGreen">
 
         <Grid.ChildrenTransitions>
             <TransitionCollection>

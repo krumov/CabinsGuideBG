@@ -33,15 +33,14 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="Content" />
-      <RootProperty Name="ZoomMode" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
+      <RootProperty Name="Background" />
       <RootProperty Name="ChildrenTransitions" />
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Children" />
       <RootProperty Name="Margin" />
       <RootProperty Name="ColumnDefinitions" />
-      <RootProperty Name="Background" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
