@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
+using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -107,5 +108,36 @@ namespace MountainGuideBG
         }
 
         #endregion
+
+
+        private async void CheckButton_Click(object sender, RoutedEventArgs e)
+        {
+            bool areYouPrepared = isPrepared();
+
+            if (!areYouPrepared)
+            {
+                MessageDialog dialog = new MessageDialog("Не всичко е важно но има няколко задължителни неща независимо, колко е хубаво времето: \n\n- Топли дрехи\n\n- Шапка и слънчеви очила (и зимата и лятото) \n\n- Слънцезащитен крем\n\n- Здрави и удобни туристически обувки", "Не си готов!");
+                await dialog.ShowAsync();
+            }
+            else
+            {
+                MessageDialog dialog = new MessageDialog("Приятно прекарване :)", "Отивай спокойно!");
+                await dialog.ShowAsync();
+
+                Frame.Navigate(typeof(HubPage));
+            }
+        }
+
+        private bool isPrepared()
+        {
+            bool arePrepared = true;
+
+            if (!this.shoesToggle.IsOn || !this.hatToggle.IsOn || !this.warmClothesToggle.IsOn || !this.suncreamToggle.IsOn)
+            {
+                arePrepared = false;
+            }
+
+            return arePrepared;
+        }
     }
 }

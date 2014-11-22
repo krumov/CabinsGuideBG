@@ -10,7 +10,9 @@ using Windows.ApplicationModel.Resources;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
+using Windows.Networking.Connectivity;
 using Windows.UI.Core;
+using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -81,16 +83,40 @@ namespace MountainGuideBG
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
             this.LoadingBar.IsActive = true;
             this.LoadingBar.Visibility = Visibility.Visible;
-
-            var sampleDataGroups = await AppViewModel.GetMountainsAsync();
-            var cabinsData =  AppViewModel.GetCabins();
-            this.DefaultViewModel["Groups"] = sampleDataGroups;
-            this.DefaultViewModel["Cabins"] = cabinsData;
+            try
+            {
+                var sampleDataGroups = await AppViewModel.GetMountainsAsync();
+                var cabinsData = AppViewModel.GetCabins();
+                this.DefaultViewModel["Groups"] = sampleDataGroups;
+                this.DefaultViewModel["Cabins"] = cabinsData;
+            }
+            catch (Exception ex)
+            {
+                ShowMessageBox();
+            }
+            
 
             this.LoadingBar.IsActive = false;
             this.LoadingBar.Visibility = Visibility.Collapsed;
         }
+        private async void ShowMessageBox()
+        {
+            //try
+            //{
+            //    ConnectionProfile InternetConnectionProfile = NetworkInformation.GetInternetConnectionProfile();
+            //    if (InternetConnectionProfile == null)
+            //    {
+                    MessageDialog dialog = new MessageDialog("Could not get data from server, you are not connected to the internet :(", "Oops, Sorry!");
+                    await dialog.ShowAsync();
+            //    }
+                
+            //}
+            //catch (Exception ex)
+            //{
+                
+            //}
 
+        }
         /// <summary>
         /// Preserves state associated with this page in case the application is suspended or the
         /// page is discarded from the navigation cache.  Values must conform to the serialization
@@ -111,8 +137,8 @@ namespace MountainGuideBG
         /// <param name="e">Details about the click event.</param>
         private void GroupSection_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var groupId = ((MountainModel)e.ClickedItem).UniqueId;
-            if (!Frame.Navigate(typeof(MountainInfo), groupId))
+            var mountain = (MountainModel)e.ClickedItem;
+            if (!Frame.Navigate(typeof(MountainInfo), mountain))
             {
                 throw new Exception(this.resourceLoader.GetString("NavigationFailedExceptionMessage"));
             }
@@ -157,5 +183,42 @@ namespace MountainGuideBG
         }
 
         #endregion
+
+
+        private void TestButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(CheckList));
+        }
+
+        private void GroupSection_Holding(object sender, HoldingRoutedEventArgs e)
+        {
+
+            FrameworkElement senderElement = sender as FrameworkElement;
+            FlyoutBase flyoutBase = FlyoutBase.GetAttachedFlyout(senderElement);
+
+            flyoutBase.ShowAt(senderElement);
+        }
+
+        private void MountainInfoMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MenuFlyoutItem item = sender as MenuFlyoutItem;
+            MountainModel mountain = item.DataContext as MountainModel;
+
+            if (!Frame.Navigate(typeof(MountainInfo), mountain))
+            {
+                throw new Exception(this.resourceLoader.GetString("NavigationFailedExceptionMessage"));
+            }
+        }
+
+        private void AllCabinsMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MenuFlyoutItem item = sender as MenuFlyoutItem;
+            MountainModel mountain = item.DataContext as MountainModel;
+
+            if (!Frame.Navigate(typeof(SectionPage), mountain))
+            {
+                throw new Exception(this.resourceLoader.GetString("NavigationFailedExceptionMessage"));
+            }
+        }
     }
 }

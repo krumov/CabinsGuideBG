@@ -74,14 +74,20 @@
 
             <HubSection x:Uid="HubSection1" Header="Mountains" DataContext="{Binding Groups}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                 <DataTemplate>
-                    <ListView x:ConnectionId='2'
+                    <ListView x:ConnectionId='3'
 						ItemsSource="{Binding}"
 						IsItemClickEnabled="True"
 						                                  
 						ContinuumNavigationTransitionInfo.ExitElementContainer="True">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Margin="0,0,0,27.5">
+                                <StackPanel x:ConnectionId='4' Margin="0,0,0,27.5"                               >
+                                    <FlyoutBase.AttachedFlyout>
+                                        <MenuFlyout>
+                                            <MenuFlyoutItem x:ConnectionId='5' DataContext="{Binding}" Text="Виж всички хижи"                                />
+                                            <MenuFlyoutItem x:ConnectionId='6' DataContext="{Binding}" Text="Информация за планината"                                    />
+                                        </MenuFlyout>
+                                    </FlyoutBase.AttachedFlyout>
                                     <TextBlock Text="{Binding Name}" x:Name="testText" Style="{ThemeResource ListViewItemTextBlockStyle}" />
                                 </StackPanel>
                             </DataTemplate>
@@ -141,7 +147,7 @@
             <HubSection x:Uid="HubSection3" Header="Cabins"
 				DataContext="{Binding Cabins}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                 <DataTemplate>
-                    <ListView x:ConnectionId='1' 
+                    <ListView x:ConnectionId='2' 
 						AutomationProperties.AutomationId="ItemGridView"
 						AutomationProperties.Name="Items In Group"
 						SelectionMode="None"
@@ -173,15 +179,17 @@
             </HubSection>-->
 
 
-            <HubSection x:Uid="HubSection5" Header="Map"
+            <HubSection x:Uid="HubSection5" Header="Checklist"
 				DataContext="{Binding Groups[1]}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                 <DataTemplate>
                     <Grid Margin="0,20,0,0">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="100"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Maps:MapControl Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        <TextBlock Text="Готов ли си за планината?" FontSize="34" TextWrapping="Wrap"/>
+
+                        <Button x:ConnectionId='1' Grid.Row="1" Content="Да проверим..." FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center"                         />
                     </Grid>
                 </DataTemplate>
             </HubSection>

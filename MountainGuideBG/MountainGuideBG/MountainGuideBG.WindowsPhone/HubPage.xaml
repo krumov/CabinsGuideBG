@@ -81,7 +81,13 @@
 						ContinuumNavigationTransitionInfo.ExitElementContainer="True">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Margin="0,0,0,27.5">
+                                <StackPanel Margin="0,0,0,27.5" Holding="GroupSection_Holding">
+                                    <FlyoutBase.AttachedFlyout>
+                                        <MenuFlyout>
+                                            <MenuFlyoutItem DataContext="{Binding}" Text="Виж всички хижи" Click="AllCabinsMenuItem_Click"/>
+                                            <MenuFlyoutItem DataContext="{Binding}" Text="Информация за планината" Click="MountainInfoMenuItem_Click" />
+                                        </MenuFlyout>
+                                    </FlyoutBase.AttachedFlyout>
                                     <TextBlock Text="{Binding Name}" x:Name="testText" Style="{ThemeResource ListViewItemTextBlockStyle}" />
                                 </StackPanel>
                             </DataTemplate>
@@ -173,15 +179,17 @@
             </HubSection>-->
 
 
-            <HubSection x:Uid="HubSection5" Header="Map"
+            <HubSection x:Uid="HubSection5" Header="Checklist"
 				DataContext="{Binding Groups[1]}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                 <DataTemplate>
                     <Grid Margin="0,20,0,0">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="100"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Maps:MapControl Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        <TextBlock Text="Готов ли си за планината?" FontSize="34" TextWrapping="Wrap"/>
+
+                        <Button Grid.Row="1" Content="Да проверим..." FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Click="TestButton_Click"/>
                     </Grid>
                 </DataTemplate>
             </HubSection>
