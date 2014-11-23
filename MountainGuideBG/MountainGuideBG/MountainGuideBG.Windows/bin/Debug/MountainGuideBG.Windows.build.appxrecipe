@@ -7,92 +7,104 @@
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>761aad5c-3cf8-425d-85d2-276a2e6b59d8</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\MountainGuideBG.Windows.exe">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\MountainGuideBG.Windows.exe">
       <PackagePath>MountainGuideBG.Windows.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\Parse\Parse.dll">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\Parse\Parse.dll">
       <PackagePath>Parse.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\Parse\Parse.WinRT.dll">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\Parse\Parse.WinRT.dll">
       <PackagePath>Parse.WinRT.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\Assets\multiplane_landscape.png">
+      <PackagePath>Assets\multiplane_landscape.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\Assets\WideLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\Assets\WideLogo.scale-100.png">
       <PackagePath>Assets\WideLogo.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\LightGray.png">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\LightGray.png">
       <PackagePath>Assets\LightGray.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\MediumGray.png">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\MediumGray.png">
       <PackagePath>Assets\MediumGray.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\DarkGray.png">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\DarkGray.png">
       <PackagePath>Assets\DarkGray.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\akademik.jpg">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\akademik.jpg">
       <PackagePath>Assets\akademik.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\aleko.jpg">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\aleko.jpg">
       <PackagePath>Assets\aleko.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\banderitza.jpg">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\banderitza.jpg">
       <PackagePath>Assets\banderitza.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\belite_brezi_vitosha.jpg">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\belite_brezi_vitosha.jpg">
       <PackagePath>Assets\belite_brezi_vitosha.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\belmeken.jpg">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\belmeken.jpg">
       <PackagePath>Assets\belmeken.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\bezbog.jpg">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\bezbog.jpg">
       <PackagePath>Assets\bezbog.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\bezovo.jpg">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\bezovo.jpg">
       <PackagePath>Assets\bezovo.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\bodrost.jpg">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Shared\Assets\bodrost.jpg">
       <PackagePath>Assets\bodrost.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\HubPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\CheckList.xbf">
+      <PackagePath>CheckList.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\HubPage.xbf">
       <PackagePath>HubPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\SectionPage.xbf">
-      <PackagePath>SectionPage.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\ItemPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\ItemPage.xbf">
       <PackagePath>ItemPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\MountainGuideBG.Windows.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\Map.xbf">
+      <PackagePath>Map.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\MountainInfo.xbf">
+      <PackagePath>MountainInfo.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\SectionPage.xbf">
+      <PackagePath>SectionPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\MountainGuideBG.Windows.xr.xml">
       <PackagePath>MountainGuideBG.Windows.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

@@ -1,1 +1,1 @@
-C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\MountainGuideBG.Windows.csproj;neutral
+C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\MountainGuideBG.Windows.csproj;neutral

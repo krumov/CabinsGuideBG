@@ -47,7 +47,7 @@
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="6*"/>
             </Grid.RowDefinitions>
-                <Button x:ConnectionId='1' VerticalAlignment="Stretch" Grid.Row="0"  HorizontalAlignment="Stretch" Content="View Route to cabin" FontSize="24"                               />
+                <Button x:ConnectionId='1' VerticalAlignment="Stretch" Grid.Row="0"  HorizontalAlignment="Stretch" Content="Покажи ми пътя до хижата." FontSize="24"                               />
 
                 <Image Source="{Binding Image}" Grid.Row="1"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  />
             <TextBlock Grid.Row="2" Text="{Binding Description}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" FontSize="28"/>
