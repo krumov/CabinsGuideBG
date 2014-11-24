@@ -109,3 +109,15 @@ C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Window
 C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\qualifiers.txt.intermediate
 C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Krasin\Documents\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\ProjectArchitectures.txt
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\CheckList.g.i.cs
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\CheckList.g.cs
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\Map.g.i.cs
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\Map.g.cs
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\MountainInfo.g.i.cs
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\MountainInfo.g.cs
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\CheckList.xaml
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\Map.xaml
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\MountainInfo.xaml
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\CheckList.xbf
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\Map.xbf
+C:\Users\Krasin\Documents\GitHub\CabinsGuideBG\MountainGuideBG\MountainGuideBG\MountainGuideBG.Windows\obj\Debug\MountainInfo.xbf

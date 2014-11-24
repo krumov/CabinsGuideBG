@@ -11,6 +11,7 @@
     <RootPropertyPathName Name="Group" />
     <RootPropertyPathName Name="cabins" />
     <RootPropertyPathName Name="Title" />
+    <RootPropertyPathName Name="Phone" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application" />
@@ -33,6 +34,8 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="Content" />
+      <RootMethod Name="GetZoomMode" />
+      <RootMethod Name="SetZoomMode" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Background" />
@@ -75,6 +78,7 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="CharacterSpacing" />
       <RootProperty Name="Foreground" />
+      <RootProperty Name="IsTextSelectionEnabled" />
     </RootType>
     <RootType FullName="MountainGuideBG.CheckList" />
     <RootType FullName="Windows.UI.Xaml.Data.Binding">

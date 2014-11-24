@@ -45,13 +45,13 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
                 <RowDefinition Height="6*"/>
             </Grid.RowDefinitions>
                 <Button VerticalAlignment="Stretch" Grid.Row="0"  HorizontalAlignment="Stretch" Content="Покажи ми пътя до хижата." FontSize="24" Click="ViewRouteButton_Click" />
-
                 <Image Source="{Binding Image}" Grid.Row="1"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  />
-            <TextBlock Grid.Row="2" Text="{Binding Description}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" FontSize="28"/>
-
+                <TextBlock Grid.Row="3" IsTextSelectionEnabled="True" Text="{Binding Description}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" FontSize="28"/>
+                <TextBlock Grid.Row="2" Text="{Binding Phone}" HorizontalAlignment="Left" Margin="10,20,0,20" VerticalAlignment="Stretch" TextWrapping="Wrap" FontSize="26"/>
         </Grid>
     </Grid>
     </ScrollViewer>

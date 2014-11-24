@@ -34,6 +34,13 @@ namespace MountainGuideBG.Models
             set { SetProperty<string>(value); }
         }
 
+        [ParseFieldName("phone")]
+        public string Phone
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty<string>(value); }
+        }
+
         [ParseFieldName("image")]
         public ParseFile Image
         {

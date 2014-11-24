@@ -96,18 +96,18 @@ namespace MountainGuideBG.Data
             return appData.Mountains;
         }
 
-        public static async Task<MountainModel> GetMountainAsync(string uniqueId)
+        public static  MountainModel GetMountainAsync(string uniqueId)
         {
-            await appData.GetParseDataAsync();
+            //await appData.GetParseDataAsync();
             // Simple linear search is acceptable for small data sets
             var matches = appData.Mountains.Where((group) => group.UniqueId.Equals(uniqueId));
             if (matches.Count() == 1) return matches.First();
             return null;
         }
 
-        public static async Task<CabinModel> GetCabinAsync(string uniqueId)
+        public static  CabinModel GetCabinAsync(string uniqueId)
         {
-            await appData.GetParseDataAsync();
+            //await appData.GetParseDataAsync();
             // Simple linear search is acceptable for small data sets
             var matches = appData.Mountains.SelectMany(group => group.cabins).Where((item) => item.UniqueId.Equals(uniqueId));
             if (matches.Count() == 1) return matches.First();
@@ -134,6 +134,7 @@ namespace MountainGuideBG.Data
 
                 newCabin.UniqueId = cabin.ObjectId;
                 newCabin.Name = cabin.Name;
+                newCabin.Phone = cabin.Phone;
                 newCabin.Mountain = cabin.Mountain;
                 newCabin.Description = cabin.Description;
                 newCabin.Latitude = cabin.Coordinates.Latitude;

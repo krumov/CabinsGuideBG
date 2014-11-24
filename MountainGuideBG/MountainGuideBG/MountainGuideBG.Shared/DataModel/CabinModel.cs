@@ -30,7 +30,8 @@ namespace MountainGuideBG.DataModel
 
 
         public string UniqueId { get;  set; }
-        public string Name { get;  set; }
+        public string Name { get; set; }
+        public string Phone { get; set; }
         public string Mountain { get;  set; }
         public string Description { get; set; }
         public double Latitude { get; set; }
