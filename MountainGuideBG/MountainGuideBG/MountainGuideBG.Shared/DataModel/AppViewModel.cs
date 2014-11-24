@@ -143,6 +143,27 @@ namespace MountainGuideBG.Data
             return null;
         }
 
+        public static void SetCabins(IEnumerable<Cabin> cabins)
+        {
+            appData.Cabins.Clear();
+
+            foreach (var cabin in cabins)
+            {
+                var newCabin = new CabinModel() { };
+
+                newCabin.UniqueId = cabin.ObjectId;
+                newCabin.Name = cabin.Name;
+                newCabin.Phone = cabin.Phone;
+                newCabin.Mountain = cabin.Mountain;
+                newCabin.Description = cabin.Description;
+                newCabin.Latitude = cabin.Coordinates.Latitude;
+                newCabin.Longtitude = cabin.Coordinates.Longitude;
+                newCabin.Image = new BitmapImage(cabin.Get<ParseFile>("image").Url);
+
+                appData.Cabins.Add(newCabin);
+            }
+        }
+
         private async Task GetParseDataAsync()
         {
             if (this.mountains.Count != 0)
@@ -157,21 +178,7 @@ namespace MountainGuideBG.Data
                 CancellationToken.None);
 
 
-            foreach (var cabin in cabinsFromParse)
-            {
-                var newCabin = new CabinModel(){};
-
-                newCabin.UniqueId = cabin.ObjectId;
-                newCabin.Name = cabin.Name;
-                newCabin.Phone = cabin.Phone;
-                newCabin.Mountain = cabin.Mountain;
-                newCabin.Description = cabin.Description;
-                newCabin.Latitude = cabin.Coordinates.Latitude;
-                newCabin.Longtitude = cabin.Coordinates.Longitude;
-                newCabin.Image = new BitmapImage(cabin.Get<ParseFile>("image").Url);
-                
-                this.Cabins.Add(newCabin);
-            }
+            SetCabins(cabinsFromParse);
 
 
             foreach (var mountain in mountainsFromParse)
@@ -197,6 +204,16 @@ namespace MountainGuideBG.Data
                     }
                 }
             }
+        }
+
+        internal static void SortCabinsByName()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static void SortCabinsByMountain()
+        {
+            throw new NotImplementedException();
         }
     }
 }

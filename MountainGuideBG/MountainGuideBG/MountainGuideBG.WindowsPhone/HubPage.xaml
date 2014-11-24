@@ -99,6 +99,8 @@
                                         <TextBlock Text="{Binding Name}" Foreground="MidnightBlue" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
                                         <TextBlock Text="{Binding Description}" Foreground="MidnightBlue" Style="{ThemeResource ListViewItemContentTextBlockStyle}" />
                                     </StackPanel>
+                                    <ProgressRing x:Name="LoadingBar" Background="Transparent" Visibility="Collapsed" IsActive="False" Foreground="MidnightBlue" IsEnabled="True" Height="4" HorizontalAlignment="Stretch" />
+
                                 </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>

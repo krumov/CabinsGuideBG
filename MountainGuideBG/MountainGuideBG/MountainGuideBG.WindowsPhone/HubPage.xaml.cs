@@ -1,13 +1,18 @@
 ﻿using MountainGuideBG.Common;
 using MountainGuideBG.Data;
 using MountainGuideBG.DataModel;
+using MountainGuideBG.Models;
+using Parse;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
+using System.Threading.Tasks;
 using Windows.ApplicationModel.Resources;
 using Windows.Data.Xml.Dom;
+using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
@@ -198,9 +203,38 @@ namespace MountainGuideBG
             await dialog.ShowAsync();
         }
 
-        private void ComboBoxItem_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void sortByDistance_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.LoadingBar.IsActive = true;
+            this.LoadingBar.Visibility = Visibility.Visible;
+
+            Geolocator locator = new Geolocator();
+            locator.DesiredAccuracy = PositionAccuracy.High;
+            Geoposition position = null;
+
+            position = await locator.GetGeopositionAsync();
+           
+            ParseGeoPoint userPosition = new ParseGeoPoint(position.Coordinate.Latitude,position.Coordinate.Longitude);
+            var cabinsFromParse = await new ParseQuery<Cabin>().WhereNear("coordinates", userPosition)
+                .FindAsync(
+                CancellationToken.None);
+
+            AppViewModel.SetCabins(cabinsFromParse);
+
+            this.LoadingBar.IsActive = false;
+            this.LoadingBar.Visibility = Visibility.Collapsed;
+        }
+
+        private void sortByName_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            AppViewModel.SortCabinsByName();
+        }
+
+        private void sortByMountain_Tapped(object sender, TappedRoutedEventArgs e)
         {
 
+            AppViewModel.SortCabinsByMountain();
         }
+
     }
 }

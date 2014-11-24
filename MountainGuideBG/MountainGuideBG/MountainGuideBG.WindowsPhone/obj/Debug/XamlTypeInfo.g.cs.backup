@@ -772,3 +772,4 @@ namespace MountainGuideBG.MountainGuideBG_WindowsPhone_XamlTypeInfo
 }
 
 
+
