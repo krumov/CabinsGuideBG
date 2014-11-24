@@ -122,5 +122,10 @@ namespace MountainGuideBG
             }
         }
 
+        private void Image_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
+
     }
 }

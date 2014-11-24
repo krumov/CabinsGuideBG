@@ -35,8 +35,8 @@
             <ProgressRing x:Name="LoadingBar" Background="Transparent" Visibility="Collapsed" IsActive="False" Foreground="Black" IsEnabled="True" Height="4" HorizontalAlignment="Stretch" />
 
         </Grid>
-      
+
     </Grid>
-    
+
 </Page>
 
