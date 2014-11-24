@@ -70,7 +70,7 @@ namespace MountainGuideBG
         private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            var item = AppViewModel.GetCabinAsync((string)e.NavigationParameter);
+            var item = AppViewModel.GetCabin((string)e.NavigationParameter);
             this.DefaultViewModel["Item"] = item;
         }
 

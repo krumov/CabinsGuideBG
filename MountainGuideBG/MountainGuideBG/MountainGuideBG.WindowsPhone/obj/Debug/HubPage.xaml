@@ -22,6 +22,18 @@
             <DataTemplate x:Key="HubSectionHeaderTemplate">
                 <TextBlock Margin="0,0,0,-9.5" Text="{Binding}"/>
             </DataTemplate>
+
+            <DataTemplate x:Key="HubSectionHeaderTemplateWithButton">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding}" Margin="0,0,5,0"/>
+
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Filter by:" Margin="0,0,5,0"/>
+                    <ComboBox Width="100" Foreground="DarkCyan">
+                        <ComboBoxItem x:ConnectionId='1' Content="Name" IsSelected="True"                             />
+                        <ComboBoxItem Content="Mountain"/>
+                    </ComboBox>
+                </StackPanel>
+            </DataTemplate>
         </ResourceDictionary>
     </Page.Resources>
 
@@ -30,7 +42,7 @@
 
             <HubSection x:Uid="HubSection1" Header="Mountains" Foreground="DarkCyan"  DataContext="{Binding Groups}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                 <DataTemplate>
-                    <ListView x:ConnectionId='3'
+                    <ListView x:ConnectionId='6'
 						ItemsSource="{Binding}"
 						IsItemClickEnabled="True"
 						                                  
@@ -42,11 +54,11 @@
                         </ListView.ItemContainerTransitions>
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel x:ConnectionId='4' Margin="0,0,0,27.5"                               >
+                                <StackPanel x:ConnectionId='7' Margin="0,0,0,27.5"                               >
                                     <FlyoutBase.AttachedFlyout>
                                         <MenuFlyout>
-                                            <MenuFlyoutItem x:ConnectionId='5' DataContext="{Binding}" Text="Виж всички хижи"                                />
-                                            <MenuFlyoutItem x:ConnectionId='6' DataContext="{Binding}" Text="Информация за планината"                                    />
+                                            <MenuFlyoutItem x:ConnectionId='8' DataContext="{Binding}" Text="Виж всички хижи"                                />
+                                            <MenuFlyoutItem x:ConnectionId='9' DataContext="{Binding}" Text="Информация за планината"                                    />
                                         </MenuFlyout>
                                     </FlyoutBase.AttachedFlyout>
                                     <TextBlock Text="{Binding Name}" Foreground="MidnightBlue" x:Name="testText" Style="{ThemeResource ListViewItemTextBlockStyle}" />
@@ -58,9 +70,9 @@
             </HubSection>
 
             <HubSection x:Uid="HubSection2" Header="Cabins"
-				DataContext="{Binding Cabins}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
+				DataContext="{Binding Cabins}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplateWithButton}">
                 <DataTemplate>
-                    <ListView x:ConnectionId='2'
+                    <ListView x:ConnectionId='4'
 						ItemsSource="{Binding}"
 						IsItemClickEnabled="True"
 						                              
@@ -68,18 +80,55 @@
                         <ListView.ItemContainerTransitions>
                             <TransitionCollection>
                                 <EntranceThemeTransition/>
+                                <AddDeleteThemeTransition/>
                             </TransitionCollection>
                         </ListView.ItemContainerTransitions>
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <Grid>
+                                <Grid IsHoldingEnabled="True">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
 
                                     <Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}" Margin="0,9.5,0,0" Grid.Column="0" HorizontalAlignment="Left">
-                                        <Image Source="{Binding Image}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Name}" Height="79" Width="79"/>
+                                        <Image Source="{Binding Image}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Name}" Height="90" Width="90"/>
+                                    </Border>
+                                    <StackPanel x:ConnectionId='5' Grid.Column="1" Margin="14.5,0,0,0"                        >
+                                        <TextBlock Text="{Binding Name}" Foreground="MidnightBlue" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
+                                        <TextBlock Text="{Binding Description}" Foreground="MidnightBlue" Style="{ThemeResource ListViewItemContentTextBlockStyle}" />
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </DataTemplate>
+            </HubSection>
+
+            <HubSection x:Uid="HubSection3" Header="Visited Cabins"
+				DataContext="{Binding VisitedCabins}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
+                <DataTemplate>
+                    <ListView x:ConnectionId='3'
+						ItemsSource="{Binding}"
+						IsItemClickEnabled="True"
+						                              
+						ContinuumNavigationTransitionInfo.ExitElementContainer="True">
+                        <ListView.ItemContainerTransitions>
+                            <TransitionCollection>
+                                <EntranceThemeTransition/>
+                                <AddDeleteThemeTransition/>
+                            </TransitionCollection>
+                        </ListView.ItemContainerTransitions>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid IsHoldingEnabled="True">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}" Margin="0,9.5,0,0" Grid.Column="0" HorizontalAlignment="Left">
+                                        <Image Source="{Binding Image}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Name}" Height="90" Width="90"/>
                                     </Border>
                                     <StackPanel Grid.Column="1" Margin="14.5,0,0,0">
                                         <TextBlock Text="{Binding Name}" Foreground="MidnightBlue" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
@@ -92,7 +141,8 @@
                 </DataTemplate>
             </HubSection>
 
-            <HubSection x:Uid="HubSection3" Header="Checklist"
+
+            <HubSection x:Uid="HubSection4" Header="Checklist"
 				HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                 <DataTemplate>
                     <Grid Margin="0,20,0,0">
@@ -102,7 +152,7 @@
                         </Grid.RowDefinitions>
                         <TextBlock Text="Готов ли си за планината?" Foreground="MidnightBlue" FontSize="34" TextWrapping="Wrap"/>
 
-                        <Button x:ConnectionId='1' Grid.Row="1" Content="Да проверим..." Foreground="MidnightBlue" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center"                         />
+                        <Button x:ConnectionId='2' Grid.Row="1" Content="Да проверим..." Foreground="MidnightBlue" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center"                         />
                     </Grid>
                 </DataTemplate>
             </HubSection>

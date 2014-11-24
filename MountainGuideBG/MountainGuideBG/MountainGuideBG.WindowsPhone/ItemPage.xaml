@@ -56,9 +56,9 @@
                 </Grid.RowDefinitions>
                 <Button VerticalAlignment="Stretch" Grid.Row="0"  HorizontalAlignment="Stretch" Content="Покажи ми пътя до хижата." FontSize="24" Click="ViewRouteButton_Click" />
                 <Image Source="{Binding Image}" IsTapEnabled="True" Tapped="Image_Tapped" Grid.Row="1"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  />
-                <TextBlock Text="тел:" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="24"/>
+                <TextBlock Text="тел:" FontWeight="Bold" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="24"/>
                 <TextBlock Grid.Row="3" IsTextSelectionEnabled="True"  Text="{Binding Phone}" HorizontalAlignment="Left" Margin="10,20,0,20" VerticalAlignment="Stretch" TextWrapping="Wrap" FontSize="26"/>
-                <TextBlock Grid.Row="4" Text="Знаете ли че..." HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="24"/>
+                <TextBlock Grid.Row="4" Text="Знаете ли че..." FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="24"/>
                 <TextBlock Grid.Row="5" IsTextSelectionEnabled="True" Text="{Binding Description}" Margin="0,20,0,20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" FontSize="28"/>
             </Grid>
         </Grid>

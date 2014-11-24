@@ -12,22 +12,9 @@ using Windows.Storage;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 
-// The data model defined by this file serves as a representative example of a strongly-typed
-// model.  The property names chosen coincide with data bindings in the standard item templates.
-//
-// Applications may use this model as a starting point and build on it, or discard it entirely and
-// replace it with something appropriate to their needs. If using this model, you might improve app 
-// responsiveness by initiating the data loading task in the code behind for App.xaml when the app 
-// is first launched.
-
 namespace MountainGuideBG.Data
 {
-    /// <summary>
-    /// Creates a collection of groups and items with content read from a static json file.
-    /// 
-    /// SampleDataSource initializes with data read from a static json file included in the 
-    /// project.  This provides sample data at both design-time and run-time.
-    /// </summary>
+
     public sealed class AppViewModel
     {
         private static AppViewModel appData = new AppViewModel();
@@ -53,6 +40,31 @@ namespace MountainGuideBG.Data
                 foreach (var item in value)
                 {
                     this.cabins.Add(item);
+                }
+            }
+        }
+       
+        private ObservableCollection<CabinModel> visitedCabins = new ObservableCollection<CabinModel>();
+        public ObservableCollection<CabinModel> VisitedCabins
+        {
+            get
+            {
+                if (this.visitedCabins == null)
+                {
+                    this.VisitedCabins = new ObservableCollection<CabinModel>();
+                }
+                return this.visitedCabins;
+            }
+            set
+            {
+                if (this.visitedCabins == null)
+                {
+                    this.visitedCabins = new ObservableCollection<CabinModel>();
+                }
+                //this.visitedCabins.Clear();
+                foreach (var item in value)
+                {
+                    this.visitedCabins.Add(item);
                 }
             }
         }
@@ -88,6 +100,12 @@ namespace MountainGuideBG.Data
 
             return appData.Cabins;
         }
+        public static IEnumerable<CabinModel> GetVisitedCabins()
+        {
+            //   await appData.GetParseDataAsync();
+
+            return appData.VisitedCabins;
+        }
 
         public static async Task<IEnumerable<MountainModel>> GetMountainsAsync()
         {
@@ -105,7 +123,18 @@ namespace MountainGuideBG.Data
             return null;
         }
 
-        public static  CabinModel GetCabinAsync(string uniqueId)
+        public static void RemoveFromCabins(string cabinId)
+        {
+            var cabin = GetCabin(cabinId);
+            appData.Cabins.Remove(cabin);
+        }
+
+        public static void AddToVisitedCabins(CabinModel cabin)
+        {
+            appData.VisitedCabins.Add(cabin);
+        }
+
+        public static  CabinModel GetCabin(string uniqueId)
         {
             //await appData.GetParseDataAsync();
             // Simple linear search is acceptable for small data sets

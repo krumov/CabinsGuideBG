@@ -7,11 +7,13 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.Resources;
+using Windows.Data.Xml.Dom;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
 using Windows.Networking.Connectivity;
 using Windows.UI.Core;
+using Windows.UI.Notifications;
 using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
@@ -23,13 +25,9 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
-// The Universal Hub Application project template is documented at http://go.microsoft.com/fwlink/?LinkID=391955
-
 namespace MountainGuideBG
 {
-    /// <summary>
-    /// A page that displays a grouped collection of items.
-    /// </summary>
+   
     public sealed partial class HubPage : Page
     {
         private readonly NavigationHelper navigationHelper;
@@ -50,45 +48,30 @@ namespace MountainGuideBG
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
         }
 
-        /// <summary>
-        /// Gets the <see cref="NavigationHelper"/> associated with this <see cref="Page"/>.
-        /// </summary>
+       
         public NavigationHelper NavigationHelper
         {
             get { return this.navigationHelper; }
         }
-
-        /// <summary>
-        /// Gets the view model for this <see cref="Page"/>.
-        /// This can be changed to a strongly typed view model.
-        /// </summary>
+               
         public ObservableDictionary DefaultViewModel
         {
             get { return this.defaultViewModel; }
         }
 
-        /// <summary>
-        /// Populates the page with content passed during navigation.  Any saved state is also
-        /// provided when recreating a page from a prior session.
-        /// </summary>
-        /// <param name="sender">
-        /// The source of the event; typically <see cref="NavigationHelper"/>
-        /// </param>
-        /// <param name="e">Event data that provides both the navigation parameter passed to
-        /// <see cref="Frame.Navigate(Type, object)"/> when this page was initially requested and
-        /// a dictionary of state preserved by this page during an earlier
-        /// session.  The state will be null the first time a page is visited.</param>
+      
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            // TODO: Create an appropriate data model for your problem domain to replace the sample data
             this.LoadingBar.IsActive = true;
             this.LoadingBar.Visibility = Visibility.Visible;
             try
             {
                 var sampleDataGroups = await AppViewModel.GetMountainsAsync();
                 var cabinsData = AppViewModel.GetCabins();
+                var visitedVabinsData = AppViewModel.GetVisitedCabins();
                 this.DefaultViewModel["Groups"] = sampleDataGroups;
                 this.DefaultViewModel["Cabins"] = cabinsData;
+                this.DefaultViewModel["VisitedCabins"] = visitedVabinsData;
             }
             catch (Exception ex)
             {
@@ -117,24 +100,13 @@ namespace MountainGuideBG
             //}
 
         }
-        /// <summary>
-        /// Preserves state associated with this page in case the application is suspended or the
-        /// page is discarded from the navigation cache.  Values must conform to the serialization
-        /// requirements of <see cref="SuspensionManager.SessionState"/>.
-        /// </summary>
-        /// <param name="sender">The source of the event; typically <see cref="NavigationHelper"/></param>
-        /// <param name="e">Event data that provides an empty dictionary to be populated with
-        /// serializable state.</param>
+     
         private void NavigationHelper_SaveState(object sender, SaveStateEventArgs e)
         {
             // TODO: Save the unique state of the page here.
         }
 
-        /// <summary>
-        /// Shows the details of a clicked group in the <see cref="SectionPage"/>.
-        /// </summary>
-        /// <param name="sender">The source of the click event.</param>
-        /// <param name="e">Details about the click event.</param>
+      
         private void GroupSection_ItemClick(object sender, ItemClickEventArgs e)
         {
             var mountain = (MountainModel)e.ClickedItem;
@@ -144,11 +116,7 @@ namespace MountainGuideBG
             }
         }
 
-        /// <summary>
-        /// Shows the details of an item clicked on in the <see cref="ItemPage"/>
-        /// </summary>
-        /// <param name="sender">The source of the click event.</param>
-        /// <param name="e">Defaults about the click event.</param>
+     
         private void ItemView_ItemClick(object sender, ItemClickEventArgs e)
         {
             var itemId = ((CabinModel)e.ClickedItem).UniqueId;
@@ -184,7 +152,6 @@ namespace MountainGuideBG
 
         #endregion
 
-
         private void TestButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(CheckList));
@@ -219,6 +186,21 @@ namespace MountainGuideBG
             {
                 throw new Exception(this.resourceLoader.GetString("NavigationFailedExceptionMessage"));
             }
+        }
+
+        private async void Cabin_Holding(object sender, HoldingRoutedEventArgs e)
+        {
+            var item = sender as StackPanel;
+            CabinModel cabin = item.DataContext as CabinModel;
+            AppViewModel.RemoveFromCabins(cabin.UniqueId);
+            AppViewModel.AddToVisitedCabins(cabin);
+            MessageDialog dialog = new MessageDialog(string.Format("Браво, хижа {0} вече е посетена :)", cabin.Name), "Продължавай в този дух!");
+            await dialog.ShowAsync();
+        }
+
+        private void ComboBoxItem_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
         }
     }
 }
